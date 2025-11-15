@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "home": "Home",
+    "docs": "Documentation",
+    "github": "GitHub"
+  },
+  "footer": {
+    "copyright": "© 2025 Rekapu. All rights reserved.",
+    "documentation": "Documentation",
+    "contact": "Contact",
+    "support": "Support",
+    "privacy": "Privacy Policy",
+    "createdBy": "Created by"
+  },
+  "cta": {
+    "addToChrome": "Install Extension",
+    "readDocs": "Read the Docs",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More"
+  },
+  "common": {
+    "previous": "Previous",
+    "next": "Next",
+    "tableOfContents": "Table of Contents",
+    "onThisPage": "On this page",
+    "backToTop": "Back to top"
+  }
+}
+

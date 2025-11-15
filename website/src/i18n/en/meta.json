@@ -1,0 +1,19 @@
+{
+  "home": {
+    "title": "Rekapu - Learn While You Browse",
+    "description": "Browser extension combining spaced repetition learning with website blocking. Answer questions before accessing sites. Learn effectively while maintaining focus."
+  },
+  "docs": {
+    "title": "Documentation - Rekapu",
+    "description": "Complete guide to using Rekapu. Learn how to create questions, manage blocked sites, and optimize your learning."
+  },
+  "installation": {
+    "title": "Installation - Rekapu",
+    "description": "Install Rekapu browser extension and get started with spaced repetition learning."
+  },
+  "og": {
+    "siteName": "Rekapu",
+    "type": "website"
+  }
+}
+

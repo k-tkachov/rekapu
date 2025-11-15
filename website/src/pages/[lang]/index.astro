@@ -1,0 +1,247 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/Button.astro';
+import { getTranslations } from '../../i18n/utils';
+
+export async function getStaticPaths() {
+  const config = await import('../../../astro.config.mjs');
+  const locales = config.default.i18n?.locales || ['en'];
+  
+  return locales.map(lang => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params;
+const { landing, common, meta } = await getTranslations(lang);
+---
+
+<BaseLayout title={meta.home.title} description={meta.home.description}>
+  <!-- Hero -->
+  <section class="relative">
+    <div class="max-w-7xl mx-auto px-6 pt-32 pb-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <h1 class="text-6xl md:text-7xl font-medium mb-6 leading-[1.1] tracking-tight">
+          {landing.hero.title}
+        </h1>
+        <p class="text-xl text-dark-text-secondary mb-8 leading-relaxed max-w-xl">
+          {landing.hero.subtitle}
+        </p>
+        <div class="flex flex-wrap gap-4 items-center">
+          <Button href="#" variant="primary" size="lg">
+            {common.cta.addToChrome}
+          </Button>
+        </div>
+        <p class="text-sm text-dark-text-tertiary mt-6">
+          {landing.hero.privacyNote}
+        </p>
+      </div>
+      
+      <!-- Hero Screenshot -->
+      <div class="relative lg:translate-y-8">
+        <div class="relative rounded-2xl overflow-hidden border border-dark-border bg-dark-bg-secondary shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-300">
+          <img 
+            src={`/${lang}/hero_screenshot.webp`}
+            alt={landing.hero.screenshotAlt}
+            class="w-full h-auto"
+            fetchpriority="high"
+            loading="eager"
+            onerror="if(this.src!='/en/hero_screenshot.webp')this.src='/en/hero_screenshot.webp'"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem/Solution -->
+  <section class="border-y border-dark-border bg-dark-bg-secondary/50">
+    <div class="max-w-4xl mx-auto px-6 py-20 text-center">
+      <h2 class="text-4xl md:text-5xl font-medium mb-6 leading-tight">
+        {landing.problem.title}<br/>
+        <span class="text-brand-400">{landing.problem.titleHighlight}</span>
+      </h2>
+      <p class="text-xl text-dark-text-secondary leading-relaxed">
+        {landing.problem.description}
+      </p>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="max-w-7xl mx-auto px-6 py-24">
+    <div class="text-center mb-20">
+      <h2 class="text-4xl md:text-5xl font-medium mb-4">{landing.features.title}</h2>
+      <p class="text-xl text-dark-text-secondary">{landing.features.subtitle}</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Spaced Repetition -->
+      <div class="group relative p-8 rounded-2xl bg-gradient-to-br from-dark-bg to-dark-bg-secondary border border-dark-border hover:border-brand-500/50 transition-all duration-300">
+        <div class="text-5xl mb-6 text-center">🧠</div>
+        <h3 class="text-2xl font-medium mb-4">{landing.features.spacedRepetition.title}</h3>
+        <p class="text-dark-text-secondary leading-relaxed">
+          {landing.features.spacedRepetition.description}
+        </p>
+      </div>
+
+      <!-- Text-to-Speech -->
+      <div class="group relative p-8 rounded-2xl bg-gradient-to-br from-dark-bg to-dark-bg-secondary border border-dark-border hover:border-brand-500/50 transition-all duration-300">
+        <div class="text-5xl mb-6 text-center">🔊</div>
+        <h3 class="text-2xl font-medium mb-4">{landing.features.tts.title}</h3>
+        <p class="text-dark-text-secondary leading-relaxed" set:html={landing.features.tts.description} />
+      </div>
+
+      <!-- Statistics -->
+      <div class="group relative p-8 rounded-2xl bg-gradient-to-br from-dark-bg to-dark-bg-secondary border border-dark-border hover:border-brand-500/50 transition-all duration-300">
+        <div class="text-5xl mb-6 text-center">📊</div>
+        <h3 class="text-2xl font-medium mb-4">{landing.features.statistics.title}</h3>
+        <p class="text-dark-text-secondary leading-relaxed">
+          {landing.features.statistics.description}
+        </p>
+      </div>
+
+      <!-- Anki Import -->
+      <div class="group relative p-8 rounded-2xl bg-gradient-to-br from-dark-bg to-dark-bg-secondary border border-dark-border hover:border-brand-500/50 transition-all duration-300">
+        <div class="text-5xl mb-6 text-center">📦</div>
+        <h3 class="text-2xl font-medium mb-4">{landing.features.anki.title}</h3>
+        <p class="text-dark-text-secondary leading-relaxed">
+          {landing.features.anki.description}
+        </p>
+      </div>
+
+      <!-- Markdown Support -->
+      <div class="group relative p-8 rounded-2xl bg-gradient-to-br from-dark-bg to-dark-bg-secondary border border-dark-border hover:border-brand-500/50 transition-all duration-300">
+        <div class="text-5xl mb-6 text-center">✍️</div>
+        <h3 class="text-2xl font-medium mb-4">{landing.features.markdown.title}</h3>
+        <p class="text-dark-text-secondary leading-relaxed">
+          {landing.features.markdown.description}
+        </p>
+      </div>
+
+      <!-- Privacy -->
+      <div class="group relative p-8 rounded-2xl bg-gradient-to-br from-dark-bg to-dark-bg-secondary border border-dark-border hover:border-brand-500/50 transition-all duration-300">
+        <div class="text-5xl mb-6 text-center">🔒</div>
+        <h3 class="text-2xl font-medium mb-4">{landing.features.privacy.title}</h3>
+        <p class="text-dark-text-secondary leading-relaxed">
+          {landing.features.privacy.description}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="max-w-7xl mx-auto px-6 py-24">
+    <div class="text-center mb-20">
+      <h2 class="text-4xl font-medium mb-4">{landing.howItWorks.title}</h2>
+      <p class="text-xl text-dark-text-secondary">{landing.howItWorks.subtitle}</p>
+    </div>
+    
+    <div class="space-y-24">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-brand-600 text-white flex items-center justify-center font-medium text-lg">
+              1
+            </div>
+            <h3 class="text-2xl font-medium">{landing.howItWorks.step1.title}</h3>
+          </div>
+          <p class="text-lg text-dark-text-secondary leading-relaxed pl-14">
+            {landing.howItWorks.step1.description}
+          </p>
+        </div>
+        <div class="rounded-2xl overflow-hidden border border-dark-border bg-dark-bg-secondary">
+          <img 
+            src={`/${lang}/step1.webp`}
+            alt={landing.howItWorks.step1.screenshotAlt}
+            class="w-full h-auto"
+            loading="lazy"
+            onerror="if(this.src!='/en/step1.webp')this.src='/en/step1.webp'"
+          />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="order-2 lg:order-1 rounded-2xl overflow-hidden border border-dark-border bg-dark-bg-secondary">
+          <img 
+            src={`/${lang}/step2.webp`}
+            alt={landing.howItWorks.step2.screenshotAlt}
+            class="w-full h-auto"
+            loading="lazy"
+            onerror="if(this.src!='/en/step2.webp')this.src='/en/step2.webp'"
+          />
+        </div>
+        <div class="order-1 lg:order-2">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-brand-600 text-white flex items-center justify-center font-medium text-lg">
+              2
+            </div>
+            <h3 class="text-2xl font-medium">{landing.howItWorks.step2.title}</h3>
+          </div>
+          <p class="text-lg text-dark-text-secondary leading-relaxed pl-14">
+            {landing.howItWorks.step2.description}
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-brand-600 text-white flex items-center justify-center font-medium text-lg">
+              3
+            </div>
+            <h3 class="text-2xl font-medium">{landing.howItWorks.step3.title}</h3>
+          </div>
+          <p class="text-lg text-dark-text-secondary leading-relaxed pl-14">
+            {landing.howItWorks.step3.description}
+          </p>
+        </div>
+        <div class="rounded-2xl overflow-hidden border border-dark-border bg-dark-bg-secondary">
+          <img 
+            src="/step3.webp"
+            alt={landing.howItWorks.step3.screenshotAlt}
+            class="w-full h-auto"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="max-w-4xl mx-auto px-6 py-24">
+    <h2 class="text-4xl font-medium mb-12 text-center">{landing.faq.title}</h2>
+    <div class="space-y-4">
+      {landing.faq.items.map((item: any, index: number) => (
+        <details class="group rounded-xl border border-dark-border bg-dark-bg-secondary overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none hover:bg-dark-bg-secondary/80 transition-colors">
+            <h3 class="text-xl font-medium pr-4">{item.question}</h3>
+            <svg 
+              class="w-5 h-5 text-dark-text-secondary transition-transform group-open:rotate-180 flex-shrink-0" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </summary>
+          <div class="px-6 pb-6 pt-0">
+            <p class="text-dark-text-secondary leading-relaxed">{item.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-4xl mx-auto px-6 py-32 text-center">
+    <h2 class="text-5xl md:text-6xl font-medium mb-6 leading-tight">
+      {landing.cta.title}
+    </h2>
+    <p class="text-xl text-dark-text-secondary mb-10 max-w-2xl mx-auto">
+      {landing.cta.subtitle}
+    </p>
+    <Button href="#" variant="primary" size="lg">
+      {common.cta.addToChrome}
+    </Button>
+  </section>
+</BaseLayout>
+

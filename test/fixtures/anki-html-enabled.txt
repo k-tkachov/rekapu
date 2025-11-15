@@ -1,0 +1,6 @@
+#separator:tab
+#html:true
+
+<b>What is React?</b>	A JavaScript <i>library</i> for building user interfaces
+What is <code>TypeScript</code>?	A typed superset of JavaScript
+

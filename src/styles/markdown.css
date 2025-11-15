@@ -1,0 +1,246 @@
+/* Universal Markdown Styles - Isolated and Protected */
+/* This ensures consistent markdown rendering across the entire app */
+
+/* Cloze preview styles */
+.cloze-preview {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #3c4043;
+  border-radius: 6px;
+  background-color: #292a2d;
+}
+
+.cloze-preview-header {
+  color: #e8eaed;
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid #35363a;
+}
+
+.markdown-content {
+  /* Isolation from global styles */
+  all: initial;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+  color: #e8eaed;
+  font-size: 14px;
+  line-height: 1.6;
+  
+  /* Container properties */
+  display: block;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Reset and base styles for all markdown content */
+.markdown-content * {
+  box-sizing: border-box;
+}
+
+/* Headings */
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  margin: 0 0 16px 0;
+  padding: 0;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #e8eaed;
+}
+
+.markdown-content h1 {
+  font-size: 2em;
+  border-bottom: 1px solid #3c4043;
+  padding-bottom: 8px;
+}
+
+.markdown-content h2 {
+  font-size: 1.5em;
+  border-bottom: 1px solid #3c4043;
+  padding-bottom: 8px;
+}
+
+.markdown-content h3 {
+  font-size: 1.25em;
+}
+
+.markdown-content h4 {
+  font-size: 1em;
+}
+
+.markdown-content h5 {
+  font-size: 0.875em;
+}
+
+.markdown-content h6 {
+  font-size: 0.85em;
+  color: #9aa0a6;
+}
+
+/* Paragraphs */
+.markdown-content p {
+  margin: 0 0 16px 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* Lists */
+.markdown-content ul,
+.markdown-content ol {
+  margin: 0 0 16px 0;
+  padding-left: 2em;
+}
+
+.markdown-content li {
+  margin: 4px 0;
+  word-wrap: break-word;
+}
+
+.markdown-content li p {
+  margin: 0;
+}
+
+/* Nested lists */
+.markdown-content ul ul,
+.markdown-content ol ol,
+.markdown-content ul ol,
+.markdown-content ol ul {
+  margin: 0;
+}
+
+/* Links */
+.markdown-content a {
+  color: #8AB4F8;
+  text-decoration: none;
+}
+
+.markdown-content a:hover {
+  text-decoration: underline;
+}
+
+/* Code */
+.markdown-content code {
+  background: #292a2d;
+  border: 1px solid #3c4043;
+  border-radius: 3px;
+  color: #e8eaed;
+  font-family: 'SF Mono', Monaco, Inconsolata, 'Roboto Mono', 'Source Code Pro', monospace;
+  font-size: 85%;
+  padding: 2px 4px;
+}
+
+.markdown-content pre {
+  background: #292a2d;
+  border: 1px solid #3c4043;
+  border-radius: 6px;
+  color: #e8eaed;
+  font-family: 'SF Mono', Monaco, Inconsolata, 'Roboto Mono', 'Source Code Pro', monospace;
+  font-size: 85%;
+  line-height: 1.45;
+  margin: 0 0 16px 0;
+  overflow: auto;
+  padding: 16px;
+}
+
+.markdown-content pre code {
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  padding: 0;
+}
+
+/* Blockquotes */
+.markdown-content blockquote {
+  border-left: 4px solid #3c4043;
+  color: #9aa0a6;
+  margin: 0 0 16px 0;
+  padding: 0 16px;
+}
+
+.markdown-content blockquote p {
+  margin-bottom: 0;
+}
+
+/* Tables */
+.markdown-content table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: block;
+  margin: 0 0 16px 0;
+  max-width: 100%;
+  overflow: auto;
+  width: 100%;
+}
+
+.markdown-content table th,
+.markdown-content table td {
+  border: 1px solid #3c4043;
+  padding: 6px 13px;
+}
+
+.markdown-content table th {
+  background: #292a2d;
+  font-weight: 600;
+}
+
+.markdown-content table tr:nth-child(2n) {
+  background: #202124;
+}
+
+/* Horizontal rules */
+.markdown-content hr {
+  background: #3c4043;
+  border: 0;
+  height: 1px;
+  margin: 24px 0;
+  padding: 0;
+}
+
+/* Images */
+.markdown-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* Strong and emphasis */
+.markdown-content strong {
+  font-weight: 600;
+  color: #e8eaed;
+}
+
+.markdown-content em {
+  font-style: italic;
+  color: #e8eaed;
+}
+
+/* Strikethrough */
+.markdown-content del {
+  text-decoration: line-through;
+  color: #9aa0a6;
+}
+
+/* Task lists */
+.markdown-content input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* First and last child margins */
+.markdown-content > *:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-content > *:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Ensure content doesn't break container */
+.markdown-content * {
+  max-width: 100%;
+}

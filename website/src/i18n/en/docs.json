@@ -1,0 +1,28 @@
+{
+  "sidebar": {
+    "gettingStarted": "Getting Started",
+    "installation": "Installation",
+    "quickStart": "Quick Start Guide",
+    "firstQuestion": "Creating Your First Question",
+    "guides": "Guides",
+    "questionManagement": "Question Management",
+    "markdownGuide": "Markdown Formatting Guide",
+    "domainBlocking": "Domain Blocking & Cooldowns",
+    "spacedRepetition": "Understanding Spaced Repetition",
+    "questionTypes": "Question Types Explained",
+    "advanced": "Advanced",
+    "backup": "Backup & Export Data",
+    "ankiImport": "Importing from Anki",
+    "storage": "Storage Management",
+    "keyboard": "Keyboard Shortcuts",
+    "help": "Help",
+    "faq": "FAQ",
+    "troubleshooting": "Troubleshooting",
+    "support": "Support"
+  },
+  "navigation": {
+    "breadcrumb": "Home",
+    "editPage": "Edit this page"
+  }
+}
+

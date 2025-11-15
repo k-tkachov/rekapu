@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getPageTranslations } from '../../i18n/utils';
+
+export async function getStaticPaths() {
+  const config = await import('../../../astro.config.mjs');
+  const locales = config.default.i18n?.locales || ['en'];
+  
+  return locales.map(lang => ({
+    params: { lang },
+  }));
+}
+
+const { lang } = Astro.params;
+const privacy = await getPageTranslations(lang, 'privacy');
+const common = await getPageTranslations(lang, 'common');
+---
+
+<BaseLayout title={privacy.title} description={privacy.intro}>
+  <article class="max-w-4xl mx-auto px-6 py-16 prose prose-invert prose-lg">
+    <h1 class="text-5xl font-medium mb-4">{privacy.title}</h1>
+    <p class="text-dark-text-tertiary text-sm mb-8">{privacy.lastUpdated}</p>
+    
+    <p class="text-xl text-dark-text-secondary mb-12">{privacy.intro}</p>
+
+    <!-- TL;DR -->
+    <div class="not-prose bg-brand-600/10 border border-brand-500/20 rounded-xl p-6 mb-12">
+      <h2 class="text-2xl font-medium mb-4">{privacy.tldr.title}</h2>
+      <ul class="space-y-2">
+        {privacy.tldr.points.map((point: string) => (
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-brand-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span class="text-dark-text-secondary">{point}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Data Collection -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-medium mb-6">{privacy.dataCollection.title}</h2>
+      
+      <div class="mb-8">
+        <h3 class="text-2xl font-medium mb-4">{privacy.dataCollection.extension.title}</h3>
+        <p class="text-dark-text-secondary mb-4">{privacy.dataCollection.extension.description}</p>
+        <ul class="list-disc list-inside space-y-2 text-dark-text-secondary mb-4">
+          {privacy.dataCollection.extension.items.map((item: string) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+        <div class="not-prose bg-dark-bg-secondary border border-dark-border rounded-lg p-4">
+          <p class="text-dark-text-secondary"><strong>Note:</strong> {privacy.dataCollection.extension.note}</p>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-medium mb-4">{privacy.dataCollection.website.title}</h3>
+        <p class="text-dark-text-secondary mb-4">{privacy.dataCollection.website.description}</p>
+        <ul class="list-disc list-inside space-y-2 text-dark-text-secondary">
+          {privacy.dataCollection.website.items.map((item: string) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <!-- Third-Party Services -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-medium mb-6">{privacy.thirdParty.title}</h2>
+      
+      <div class="mb-8">
+        <h3 class="text-2xl font-medium mb-4">{privacy.thirdParty.tts.title}</h3>
+        <p class="text-dark-text-secondary mb-4">{privacy.thirdParty.tts.description}</p>
+        <ul class="list-disc list-inside space-y-2 text-dark-text-secondary mb-4">
+          {privacy.thirdParty.tts.items.map((item: string) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+        <div class="not-prose bg-dark-bg-secondary border border-dark-border rounded-lg p-4">
+          <p class="text-dark-text-secondary"><strong>Note:</strong> {privacy.thirdParty.tts.note}</p>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-2xl font-medium mb-4">{privacy.thirdParty.chromeWebStore.title}</h3>
+        <p class="text-dark-text-secondary mb-4">{privacy.thirdParty.chromeWebStore.description}</p>
+        <ul class="list-disc list-inside space-y-2 text-dark-text-secondary mb-4">
+          {privacy.thirdParty.chromeWebStore.items.map((item: string) => (
+            <li>{item}</li>
+          ))}
+        </ul>
+        <div class="not-prose bg-dark-bg-secondary border border-dark-border rounded-lg p-4">
+          <p class="text-dark-text-secondary"><strong>Note:</strong> {privacy.thirdParty.chromeWebStore.note}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Browser Permissions -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-medium mb-6">{privacy.permissions.title}</h2>
+      <p class="text-dark-text-secondary mb-4">{privacy.permissions.description}</p>
+      <div class="space-y-4 mb-4">
+        {privacy.permissions.items.map((item: any) => (
+          <div class="not-prose bg-dark-bg-secondary border border-dark-border rounded-lg p-4">
+            <code class="text-brand-400 font-mono text-sm">{item.permission}</code>
+            <p class="text-dark-text-secondary mt-2">{item.reason}</p>
+          </div>
+        ))}
+      </div>
+      <div class="not-prose bg-dark-bg-secondary border border-dark-border rounded-lg p-4">
+        <p class="text-dark-text-secondary"><strong>Note:</strong> {privacy.permissions.note}</p>
+      </div>
+    </section>
+
+    <!-- Data Sharing -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-medium mb-6">{privacy.dataSharing.title}</h2>
+      <p class="text-dark-text-secondary mb-4">{privacy.dataSharing.description}</p>
+      <ul class="list-disc list-inside space-y-2 text-dark-text-secondary">
+        {privacy.dataSharing.points.map((point: string) => (
+          <li>{point}</li>
+        ))}
+      </ul>
+    </section>
+
+    <!-- Data Retention -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-medium mb-6">{privacy.dataRetention.title}</h2>
+      <p class="text-dark-text-secondary mb-4">{privacy.dataRetention.description}</p>
+      <ul class="list-disc list-inside space-y-2 text-dark-text-secondary">
+        {privacy.dataRetention.items.map((item: string) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </section>
+
+    <!-- Your Rights -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-medium mb-6">{privacy.yourRights.title}</h2>
+      <p class="text-dark-text-secondary">{privacy.yourRights.description}</p>
+    </section>
+
+    <!-- Changes to This Policy -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-medium mb-6">{privacy.changes.title}</h2>
+      <p class="text-dark-text-secondary">{privacy.changes.description}</p>
+    </section>
+
+    <!-- Contact -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-medium mb-6">{privacy.contact.title}</h2>
+      <p class="text-dark-text-secondary mb-4">{privacy.contact.description}</p>
+      <ul class="list-disc list-inside space-y-2 text-dark-text-secondary">
+        <li>Open an issue on <a href="https://github.com/k-tkachov/rekapu" class="text-brand-400 hover:text-brand-300 transition-colors">GitHub</a></li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <div class="not-prose border-t border-dark-border pt-8 mt-12">
+      <p class="text-dark-text-tertiary text-sm">{privacy.footer}</p>
+    </div>
+  </article>
+</BaseLayout>
+

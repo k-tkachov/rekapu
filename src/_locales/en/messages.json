@@ -1,0 +1,2073 @@
+{
+  "extName": {
+    "message": "Rekapu",
+    "description": "Extension name"
+  },
+  "extDescription": {
+    "message": "Combine spaced repetition learning with website access control for focused productivity",
+    "description": "Extension description"
+  },
+  "yourProgress": {
+    "message": "Your Progress"
+  },
+  "currentStreak": {
+    "message": "Current Streak"
+  },
+  "days": {
+    "message": "days"
+  },
+  "best": {
+    "message": "Best"
+  },
+  "currentWeek": {
+    "message": "Current Week"
+  },
+  "todaysGoal": {
+    "message": "Today's Goal"
+  },
+  "answerMore": {
+    "message": "Answer $COUNT$ more to protect your streak",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "goalComplete": {
+    "message": "✅ Goal complete! Streak safe"
+  },
+  "quickActions": {
+    "message": "Quick Actions"
+  },
+  "noCardsDue": {
+    "message": "No cards due yet"
+  },
+  "studyDueCards": {
+    "message": "📚 Study Due Cards"
+  },
+  "addCard": {
+    "message": "Add a Card"
+  },
+  "addCards": {
+    "message": "Add Cards"
+  },
+  "more": {
+    "message": "More"
+  },
+  "manageCards": {
+    "message": "Manage Cards"
+  },
+  "createFirstCard": {
+    "message": "Create your first card to get started with spaced repetition learning."
+  },
+  "statistics": {
+    "message": "Statistics"
+  },
+  "studySettings": {
+    "message": "Study Settings"
+  },
+  "configureSubjects": {
+    "message": "Configure which subjects appear on blocked pages"
+  },
+  "blockedDomains": {
+    "message": "Blocked Domains"
+  },
+  "addWebsitesToBlock": {
+    "message": "Add websites to block"
+  },
+  "domainsInBlockList": {
+    "message": "$COUNT$ $DOMAINWORD$ in block list",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "domainword": {
+        "content": "$2"
+      }
+    }
+  },
+  "domainOne": {
+    "message": "domain"
+  },
+  "domainOther": {
+    "message": "domains"
+  },
+  "addDomains": {
+    "message": "Add Domains"
+  },
+  "adding": {
+    "message": "Adding..."
+  },
+  "blocked": {
+    "message": "🔒 Blocked"
+  },
+  "unblocked": {
+    "message": "🔓 Unblocked"
+  },
+  "cannotEditBlocked": {
+    "message": "Cannot Edit (Blocked)"
+  },
+  "editSettings": {
+    "message": "Edit Settings"
+  },
+  "cannotDeleteBlocked": {
+    "message": "Cannot Delete (Blocked)"
+  },
+  "deleteDomain": {
+    "message": "Delete Domain"
+  },
+  "unblockedFor": {
+    "message": "Unblocked for:"
+  },
+  "cooldown": {
+    "message": "Cooldown:"
+  },
+  "minutes": {
+    "message": "minutes"
+  },
+  "subdomains": {
+    "message": "Subdomains:"
+  },
+  "include": {
+    "message": "Include"
+  },
+  "exclude": {
+    "message": "Exclude"
+  },
+  "included": {
+    "message": "Included"
+  },
+  "excluded": {
+    "message": "Excluded"
+  },
+  "cancel": {
+    "message": "Cancel"
+  },
+  "save": {
+    "message": "Save"
+  },
+  "canOnlyIncreaseCooldown": {
+    "message": "🔒 Can only increase cooldown for blocked domains"
+  },
+  "noBlockedDomains": {
+    "message": "No blocked domains"
+  },
+  "addWebsitesImprove": {
+    "message": "Add websites to block and improve your focus through learning"
+  },
+  "settings": {
+    "message": "Settings"
+  },
+  "dashboard": {
+    "message": "Dashboard"
+  },
+  "study": {
+    "message": "Study"
+  },
+  "domains": {
+    "message": "Domains"
+  },
+  "addDomainsToBlock": {
+    "message": "Add Domains to Block"
+  },
+  "domainList": {
+    "message": "Domain List"
+  },
+  "domainPlaceholder": {
+    "message": "example.com&#10;youtube.com, reddit.com&#10;twitter.com"
+  },
+  "domainHelperText": {
+    "message": "Enter one domain per line or separate with commas. URLs will be automatically cleaned (https://, www. removed)."
+  },
+  "settingsForNewDomains": {
+    "message": "Settings for New Domains"
+  },
+  "cooldownPeriodMinutes": {
+    "message": "Cooldown Period (minutes)"
+  },
+  "includeSubdomains": {
+    "message": "Include Subdomains"
+  },
+  "canChangeAfterAdding": {
+    "message": "You can change individual domain settings after adding them"
+  },
+  "invalidDomains": {
+    "message": "Invalid domains"
+  },
+  "enterValidDomains": {
+    "message": "Please enter valid domain names"
+  },
+  "domainsAdded": {
+    "message": "Added $COUNT$ domain$PLURAL$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "plural": {
+        "content": "$2"
+      }
+    }
+  },
+  "domainNowBlocked": {
+    "message": "Domain is now blocked"
+  },
+  "domainsNowBlocked": {
+    "message": "Domains are now blocked"
+  },
+  "someDomainsFailed": {
+    "message": "Some domains failed"
+  },
+  "error": {
+    "message": "Error"
+  },
+  "failedToAddDomains": {
+    "message": "Failed to add domains"
+  },
+  "cannotDeleteBlockedDomain": {
+    "message": "Cannot delete blocked domain"
+  },
+  "mustAnswerToUnblock": {
+    "message": "You must answer cards to unblock this domain before deleting it"
+  },
+  "domainRemoved": {
+    "message": "Domain removed"
+  },
+  "domainRemovedFromList": {
+    "message": "$DOMAIN$ has been removed from your block list",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "failedToRemoveDomain": {
+    "message": "Failed to remove domain"
+  },
+  "settingsUpdated": {
+    "message": "Settings updated"
+  },
+  "defaultCooldownSet": {
+    "message": "Default cooldown period set to $MINUTES$ minutes",
+    "placeholders": {
+      "minutes": {
+        "content": "$1"
+      }
+    }
+  },
+  "failedToUpdateSettings": {
+    "message": "Failed to update settings"
+  },
+  "cannotReduceCooldown": {
+    "message": "Cannot reduce cooldown"
+  },
+  "canOnlyIncreaseCooldownBlocked": {
+    "message": "You can only increase cooldown periods for blocked domains. Answer cards to unblock first."
+  },
+  "domainUpdated": {
+    "message": "Domain updated"
+  },
+  "domainSettingsUpdated": {
+    "message": "$DOMAIN$ settings updated",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "failedToUpdateDomain": {
+    "message": "Failed to update domain settings"
+  },
+  "detectingSite": {
+    "message": "Detecting site..."
+  },
+  "siteBlocked": {
+    "message": "✓ $DOMAIN$ is blocked",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "cannotBlockPage": {
+    "message": "Cannot block this page"
+  },
+  "blockSite": {
+    "message": "🔒 Block $DOMAIN$",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "blocking": {
+    "message": "Blocking..."
+  },
+  "blockWebsite": {
+    "message": "Block Website"
+  },
+  "willAddToDomains": {
+    "message": "This will add the selected domain to your blocked domains list. You'll need to answer cards to access it."
+  },
+  "whichDomainToBlock": {
+    "message": "Which domain to block?"
+  },
+  "thisSubdomainOnly": {
+    "message": "(This subdomain only)"
+  },
+  "entireWebsite": {
+    "message": "(Entire website)"
+  },
+  "chooseSubdomainOrEntire": {
+    "message": "Choose to block just this subdomain or the entire website"
+  },
+  "willBlockEntireWebsite": {
+    "message": "This will block $DOMAIN$ entirely.",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "cooldownPeriod": {
+    "message": "Cooldown Period"
+  },
+  "timeBeforeAccess": {
+    "message": "Time before you can access this domain again after answering questions"
+  },
+  "alsoBlockSubdomains": {
+    "message": "Also block subdomains of $DOMAIN$ (e.g., m.$DOMAIN$)",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "siteBlockedSuccessfully": {
+    "message": "Site blocked successfully"
+  },
+  "addedToBlockList": {
+    "message": "$DOMAIN$ has been added to your block list",
+    "placeholders": {
+      "domain": {
+        "content": "$1"
+      }
+    }
+  },
+  "errorBlockingSite": {
+    "message": "Error blocking site"
+  },
+  "failedToAddToBlockList": {
+    "message": "Failed to add domain to block list"
+  },
+  "expiring": {
+    "message": "Expiring..."
+  },
+  "hourShort": {
+    "message": "h"
+  },
+  "minuteShort": {
+    "message": "m"
+  },
+  "secondShort": {
+    "message": "s"
+  },
+  "dayOne": {
+    "message": "day"
+  },
+  "dayOther": {
+    "message": "days"
+  },
+  "rekapuManager": {
+    "message": "👻 Rekapu"
+  },
+  "newCard": {
+    "message": "New Card"
+  },
+  "editCard": {
+    "message": "Edit card"
+  },
+  "loading": {
+    "message": "Loading..."
+  },
+  "cards": {
+    "message": "Questions"
+  },
+  "importExport": {
+    "message": "Import/Export"
+  },
+  "cardNotFound": {
+    "message": "Card not found"
+  },
+  "cardNotFoundDesc": {
+    "message": "The card you are trying to edit was not found."
+  },
+  "failedToLoadCard": {
+    "message": "Failed to load card for editing."
+  },
+  "cardUpdated": {
+    "message": "Card updated successfully"
+  },
+  "cardUpdatedSuccess": {
+    "message": "Your card has been successfully updated."
+  },
+  "cardCreated": {
+    "message": "Card created successfully"
+  },
+  "cardCreatedSuccess": {
+    "message": "Your new card has been created."
+  },
+  "cardCreatedReady": {
+    "message": "Your card has been created. Ready for the next one!"
+  },
+  "loadingForm": {
+    "message": "Loading Form..."
+  },
+  "loadingCards": {
+    "message": "Loading Cards..."
+  },
+  "loadingStatistics": {
+    "message": "Loading Statistics..."
+  },
+  "loadingImportExport": {
+    "message": "Loading Import/Export..."
+  },
+  "loadingSettings": {
+    "message": "Loading settings..."
+  },
+  "searchPlaceholder": {
+    "message": "Search front, back, or tags..."
+  },
+  "allTags": {
+    "message": "All tags"
+  },
+  "dueDate": {
+    "message": "Due Date"
+  },
+  "front": {
+    "message": "Front"
+  },
+  "newest": {
+    "message": "Newest"
+  },
+  "modified": {
+    "message": "Modified"
+  },
+  "cardsCount": {
+    "message": "$COUNT$ $CARDWORD$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "cardword": {
+        "content": "$2"
+      }
+    }
+  },
+  "cardOne": {
+    "message": "card"
+  },
+  "cardOther": {
+    "message": "cards"
+  },
+  "filtered": {
+    "message": " (filtered)"
+  },
+  "clearFilters": {
+    "message": "Clear Filters"
+  },
+  "noCardsYet": {
+    "message": "No cards yet"
+  },
+  "noCardsMatch": {
+    "message": "No cards match your filters"
+  },
+  "createFirstCardDesc": {
+    "message": "Create your first card to get started with spaced repetition learning."
+  },
+  "adjustFilters": {
+    "message": "Try adjusting your search terms or removing filters."
+  },
+  "due": {
+    "message": "Due"
+  },
+  "draft": {
+    "message": "Draft"
+  },
+  "type": {
+    "message": "Type"
+  },
+  "back": {
+    "message": "Back"
+  },
+  "tags": {
+    "message": "Tags"
+  },
+  "actions": {
+    "message": "Actions"
+  },
+  "currentlyDraft": {
+    "message": "Currently draft - toggle to publish"
+  },
+  "currentlyPublished": {
+    "message": "Currently published - toggle to draft"
+  },
+  "untitled": {
+    "message": "Untitled"
+  },
+  "noAnswer": {
+    "message": "No answer"
+  },
+  "deleteCard": {
+    "message": "Delete card"
+  },
+  "deleteCardTitle": {
+    "message": "Delete Card"
+  },
+  "deleteCardConfirm": {
+    "message": "Are you sure you want to delete this card? This action cannot be undone."
+  },
+  "success": {
+    "message": "Success"
+  },
+  "cardDeletedSuccessfully": {
+    "message": "Card deleted successfully"
+  },
+  "failedToDeleteCard": {
+    "message": "Failed to delete card"
+  },
+  "cardPublished": {
+    "message": "Card published"
+  },
+  "cardMarkedDraft": {
+    "message": "Card marked as draft"
+  },
+  "cardWillAppear": {
+    "message": "Card will now appear in study sessions"
+  },
+  "cardWillNotAppear": {
+    "message": "Card will not appear in study sessions"
+  },
+  "failedToUpdateStatus": {
+    "message": "Failed to update card status"
+  },
+  "customizeExperience": {
+    "message": "Customize your experience"
+  },
+  "defaultCooldownPeriod": {
+    "message": "Default Cooldown Period"
+  },
+  "timeBeforeAccessDesc": {
+    "message": "Time before you can access blocked domains again (used for new domains)"
+  },
+  "defaultBackupScope": {
+    "message": "Default Backup Scope"
+  },
+  "chooseBackupData": {
+    "message": "Choose what data to include in backups by default"
+  },
+  "cardsOnly": {
+    "message": "Cards Only"
+  },
+  "fullBackup": {
+    "message": "Full Backup"
+  },
+  "backupScopeUpdated": {
+    "message": "Default backup scope set to $SCOPE$",
+    "placeholders": {
+      "scope": {
+        "content": "$1"
+      }
+    }
+  },
+  "failedToUpdateBackupScope": {
+    "message": "Failed to update backup scope"
+  },
+  "storageUsage": {
+    "message": "Storage Usage"
+  },
+  "monitorStorage": {
+    "message": "Monitor your data storage usage and quota status"
+  },
+  "safe": {
+    "message": "Safe"
+  },
+  "warning": {
+    "message": "Warning"
+  },
+  "critical": {
+    "message": "Critical"
+  },
+  "exceeded": {
+    "message": "Exceeded"
+  },
+  "used": {
+    "message": "$BYTES$ used",
+    "placeholders": {
+      "bytes": {
+        "content": "$1"
+      }
+    }
+  },
+  "available": {
+    "message": "$BYTES$ available",
+    "placeholders": {
+      "bytes": {
+        "content": "$1"
+      }
+    }
+  },
+  "unableToLoadStorage": {
+    "message": "Unable to load storage information"
+  },
+  "storageDisclaimer": {
+    "message": "💡 Storage estimates are approximate. Actual browser limits depend on available disk space."
+  },
+  "textToSpeech": {
+    "message": "Text-to-Speech (TTS)"
+  },
+  "ttsDescription": {
+    "message": "Enable audio playback for cards using Google Cloud TTS"
+  },
+  "securityNoticeTitle": {
+    "message": "Security Notice"
+  },
+  "securityNoticeDescription": {
+    "message": "API keys are stored locally on your device. Anyone with access to this computer can extract them."
+  },
+  "securityTip1": {
+    "message": "Create API keys with strict usage quotas (e.g., $5/month limit)"
+  },
+  "securityTip2": {
+    "message": "Monitor API usage in your provider dashboard regularly"
+  },
+  "securityTip3": {
+    "message": "Don't use this extension on shared or public computers"
+  },
+  "apiConfiguration": {
+    "message": "API Configuration"
+  },
+  "enterApiKey": {
+    "message": "Enter Google Cloud TTS API key"
+  },
+  "hideApiKey": {
+    "message": "Hide API key"
+  },
+  "showApiKey": {
+    "message": "Show API key"
+  },
+  "saveApiKey": {
+    "message": "Save API Key"
+  },
+  "getApiKeyFrom": {
+    "message": "Get your API key from"
+  },
+  "googleCloudConsole": {
+    "message": "Google Cloud Console"
+  },
+  "makeEnableTTS": {
+    "message": "Make sure to enable"
+  },
+  "cloudTTSAPI": {
+    "message": "Cloud Text-to-Speech API"
+  },
+  "inYourProject": {
+    "message": "in your project"
+  },
+  "testVoice": {
+    "message": "Test Voice"
+  },
+  "enterTestText": {
+    "message": "Enter test text..."
+  },
+  "saveApiKeyToLoad": {
+    "message": "Save API key to load languages"
+  },
+  "allModels": {
+    "message": "All Models"
+  },
+  "neural2HighQuality": {
+    "message": "Neural2 (High Quality)"
+  },
+  "wavenetNatural": {
+    "message": "WaveNet (Natural)"
+  },
+  "chirp3HD": {
+    "message": "Chirp3 (HD Voices)"
+  },
+  "studioPremium": {
+    "message": "Studio (Premium)"
+  },
+  "standardBasic": {
+    "message": "Standard (Basic)"
+  },
+  "loadingVoices": {
+    "message": "Loading voices..."
+  },
+  "selectModelFirst": {
+    "message": "Select a model first"
+  },
+  "playTest": {
+    "message": "Play Test"
+  },
+  "playing": {
+    "message": "Playing..."
+  },
+  "enableTTSForTags": {
+    "message": "Enable TTS for Tags"
+  },
+  "enableAll": {
+    "message": "Enable All"
+  },
+  "disableAll": {
+    "message": "Disable All"
+  },
+  "noTagsAvailable": {
+    "message": "No tags available"
+  },
+  "configure": {
+    "message": "Configure"
+  },
+  "language": {
+    "message": "Language"
+  },
+  "model": {
+    "message": "Model"
+  },
+  "voice": {
+    "message": "Voice"
+  },
+  "ttsWillAppearDesc": {
+    "message": "TTS will appear on cards with enabled tags. Configure language, model, and voice for each tag."
+  },
+  "audioCache": {
+    "message": "Audio Cache"
+  },
+  "clearCache": {
+    "message": "Clear Cache"
+  },
+  "cachedEntries": {
+    "message": "Cached entries:"
+  },
+  "cacheSize": {
+    "message": "Cache size:"
+  },
+  "hitRate": {
+    "message": "Hit rate:"
+  },
+  "enterApiKeyError": {
+    "message": "Please enter an API key"
+  },
+  "invalidApiKey": {
+    "message": "Invalid API Key"
+  },
+  "invalidApiKeyDesc": {
+    "message": "The API key you entered is not valid. Check the browser console for details. Make sure the Cloud Text-to-Speech API is enabled in your Google Cloud project."
+  },
+  "apiKeySaved": {
+    "message": "API Key Saved"
+  },
+  "apiKeySavedDesc": {
+    "message": "Your Google TTS API key has been saved successfully. Select a language and model to load voices."
+  },
+  "failedToSaveApiKey": {
+    "message": "Failed to save API key"
+  },
+  "failedToLoadVoices": {
+    "message": "Failed to load voices. Check your API key and internet connection."
+  },
+  "enterTestTextAndVoice": {
+    "message": "Please enter test text and select a voice"
+  },
+  "playbackError": {
+    "message": "Playback Error"
+  },
+  "failedToPlayAudio": {
+    "message": "Failed to play audio"
+  },
+  "playingCached": {
+    "message": "Playing (Cached)"
+  },
+  "audioFromCache": {
+    "message": "Audio loaded from cache"
+  },
+  "audioSynthesized": {
+    "message": "Audio synthesized"
+  },
+  "playbackBlocked": {
+    "message": "Playback Blocked"
+  },
+  "playbackBlockedDesc": {
+    "message": "Browser blocked autoplay. Please enable autoplay for this site or try clicking the test button again."
+  },
+  "testFailed": {
+    "message": "Test Failed"
+  },
+  "ttsEnabled": {
+    "message": "TTS Enabled"
+  },
+  "ttsEnabledForTag": {
+    "message": "Tag \"$TAG$\" configured with default voice. Click \"Configure\" to customize.",
+    "placeholders": {
+      "tag": {
+        "content": "$1"
+      }
+    }
+  },
+  "ttsEnabledButConfig": {
+    "message": "TTS enabled for \"$TAG$\" but voice configuration needed. Click \"Configure\" to set up.",
+    "placeholders": {
+      "tag": {
+        "content": "$1"
+      }
+    }
+  },
+  "ttsEnabledAllTags": {
+    "message": "TTS enabled for all tags"
+  },
+  "ttsDisabled": {
+    "message": "TTS Disabled"
+  },
+  "ttsDisabledAllTags": {
+    "message": "TTS disabled for all tags"
+  },
+  "saved": {
+    "message": "Saved"
+  },
+  "voiceConfigSaved": {
+    "message": "Voice config saved for \"$TAG$\"",
+    "placeholders": {
+      "tag": {
+        "content": "$1"
+      }
+    }
+  },
+  "cacheCleared": {
+    "message": "Cache Cleared"
+  },
+  "ttsCacheCleared": {
+    "message": "TTS audio cache has been cleared"
+  },
+  "failedToClearCache": {
+    "message": "Failed to clear cache"
+  },
+  "websiteBlocked": {
+    "message": "Website Blocked"
+  },
+  "answerToContinue": {
+    "message": "Review this card to continue browsing."
+  },
+  "card": {
+    "message": "Front"
+  },
+  "loadingCard": {
+    "message": "Loading card..."
+  },
+  "playAnswerAudio": {
+    "message": "Play answer audio"
+  },
+  "playCardAudio": {
+    "message": "Play card audio"
+  },
+  "ttsCardSide": {
+    "message": "TTS Card Side"
+  },
+  "ttsCardSideDescription": {
+    "message": "Choose which side of the card TTS should be available on"
+  },
+  "cardSideFront": {
+    "message": "Front Only"
+  },
+  "cardSideBack": {
+    "message": "Back Only"
+  },
+  "cardSideBoth": {
+    "message": "Both Sides"
+  },
+  "typeAnswer": {
+    "message": "Type your answer here..."
+  },
+  "submitAnswer": {
+    "message": "Submit Answer"
+  },
+  "pressSpaceOrEnter": {
+    "message": "Press Space or Enter"
+  },
+  "studyAllDue": {
+    "message": "Study Due Cards"
+  },
+  "proceedToWebsite": {
+    "message": "Proceed to Website"
+  },
+  "greatJob": {
+    "message": "🎉 Great job!"
+  },
+  "workedThroughAll": {
+    "message": "You've worked through all available cards. You can add more cards to continue learning, or proceed to the website."
+  },
+  "again": {
+    "message": "Again"
+  },
+  "hard": {
+    "message": "Hard"
+  },
+  "good": {
+    "message": "Good"
+  },
+  "easy": {
+    "message": "Easy"
+  },
+  "press1": {
+    "message": "Press 1"
+  },
+  "press2": {
+    "message": "Press 2"
+  },
+  "press3": {
+    "message": "Press 3"
+  },
+  "press4": {
+    "message": "Press 4"
+  },
+  "cardFrontLabel": {
+    "message": "Front"
+  },
+  "cardFrontPlaceholder": {
+    "message": "Front side of the card... You can use Markdown formatting."
+  },
+  "cardFrontHelper": {
+    "message": "This is what you'll see when the card is presented to you"
+  },
+  "answerBackLabel": {
+    "message": "Back"
+  },
+  "answerBackPlaceholder": {
+    "message": "Enter the back side of the card... You can use Markdown formatting."
+  },
+  "answerBackHelper": {
+    "message": "This is what you'll see after answering the card"
+  },
+  "searchTagsPlaceholder": {
+    "message": "Search tags..."
+  },
+  "addTagsPlaceholder": {
+    "message": "Add tags to organize imported cards..."
+  },
+  "addTagsHelper": {
+    "message": "These tags will be added to all imported cards in addition to any tags from the Anki file"
+  },
+  "enterApiKeyPlaceholder": {
+    "message": "Enter Google Cloud TTS API key"
+  },
+  "apiKeySavedPlaceholder": {
+    "message": "API key is saved • Enter new key to replace"
+  },
+  "enterTestTextPlaceholder": {
+    "message": "Enter test text..."
+  },
+  "editCard": {
+    "message": "Edit this card"
+  },
+  "previousPage": {
+    "message": "Previous page"
+  },
+  "nextPage": {
+    "message": "Next page"
+  },
+  "domainOptions": {
+    "message": "Domain options"
+  },
+  "saveSettings": {
+    "message": "Save settings"
+  },
+  "cancelEdit": {
+    "message": "Cancel edit"
+  },
+  "editDefaultCooldown": {
+    "message": "Edit default cooldown"
+  },
+  "dailyGoalSetting": {
+    "message": "Daily Goal"
+  },
+  "dailyGoalDesc": {
+    "message": "Number of questions you need to answer daily to maintain your streak"
+  },
+  "editDailyGoal": {
+    "message": "Edit daily goal"
+  },
+  "questions": {
+    "message": "questions"
+  },
+  "dailyGoalUpdated": {
+    "message": "Daily goal set to $COUNT$ questions",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "editBackupScope": {
+    "message": "Edit backup scope"
+  },
+  "saveBackupScope": {
+    "message": "Save backup scope"
+  },
+  "importAndExport": {
+    "message": "Import & Export"
+  },
+  "exportData": {
+    "message": "Export Data"
+  },
+  "backupScope": {
+    "message": "Backup Scope"
+  },
+  "exportCardsDesc": {
+    "message": "Export cards and tags only"
+  },
+  "fullBackupDesc": {
+    "message": "Export all data including settings, statistics, and spaced repetition state"
+  },
+  "exportBackup": {
+    "message": "Export Backup"
+  },
+  "exporting": {
+    "message": "Exporting..."
+  },
+  "importData": {
+    "message": "Import Data"
+  },
+  "importScope": {
+    "message": "Import Scope"
+  },
+  "importCardsDesc": {
+    "message": "Import cards and tags only"
+  },
+  "fullImport": {
+    "message": "Full Import"
+  },
+  "fullImportDesc": {
+    "message": "Import all data including settings and statistics"
+  },
+  "selectBackupFile": {
+    "message": "Select Backup File"
+  },
+  "chooseFile": {
+    "message": "Choose file"
+  },
+  "noFileSelected": {
+    "message": "No file selected"
+  },
+  "conflictStrategy": {
+    "message": "Conflict Strategy"
+  },
+  "skip": {
+    "message": "Skip"
+  },
+  "skipDuplicates": {
+    "message": "Skip duplicates"
+  },
+  "rename": {
+    "message": "Rename"
+  },
+  "renameConflicts": {
+    "message": "Rename conflicts"
+  },
+  "overwrite": {
+    "message": "Overwrite"
+  },
+  "overwriteExisting": {
+    "message": "Overwrite existing"
+  },
+  "merge": {
+    "message": "Merge"
+  },
+  "mergeData": {
+    "message": "Merge data"
+  },
+  "askForEach": {
+    "message": "Ask for each"
+  },
+  "startImport": {
+    "message": "Start Import"
+  },
+  "importing": {
+    "message": "Importing..."
+  },
+  "importFromAnki": {
+    "message": "Import from Anki"
+  },
+  "selectAnkiFile": {
+    "message": "Select Anki .txt File"
+  },
+  "noTags": {
+    "message": "No tags"
+  },
+  "addTagsToImported": {
+    "message": "Add Tags to Imported Cards (Optional)"
+  },
+  "importCards": {
+    "message": "Import Cards"
+  },
+  "dataRecoveryValidation": {
+    "message": "Data Recovery & Validation"
+  },
+  "viewSnapshots": {
+    "message": "View Snapshots"
+  },
+  "validateData": {
+    "message": "Validate Data"
+  },
+  "resolveConflicts": {
+    "message": "Resolve Import Conflicts"
+  },
+  "summary": {
+    "message": "Summary"
+  },
+  "errors": {
+    "message": "Errors"
+  },
+  "less": {
+    "message": "Less"
+  },
+  "errorLoadingStats": {
+    "message": "Error Loading Statistics"
+  },
+  "time": {
+    "message": "Time"
+  },
+  "bestStreak": {
+    "message": "Best Streak"
+  },
+  "progressToBeat": {
+    "message": "Progress to beat record"
+  },
+  "dueCards": {
+    "message": "Due Cards"
+  },
+  "recentPace": {
+    "message": "Recent Pace (7d)"
+  },
+  "daysToClear": {
+    "message": "Days to Clear"
+  },
+  "showAnswer": {
+    "message": "Show Answer"
+  },
+  "retry": {
+    "message": "Retry"
+  },
+  "learningStatistics": {
+    "message": "Learning Statistics"
+  },
+  "filteredBy": {
+    "message": "Filtered by"
+  },
+  "tag": {
+    "message": "tag"
+  },
+  "activeStudyTags": {
+    "message": "Active Study Tags"
+  },
+  "delete": {
+    "message": "Delete"
+  },
+  "na": {
+    "message": "N/A"
+  },
+  "currentlyDraftToggle": {
+    "message": "Currently draft - toggle to publish"
+  },
+  "currentlyPublishedToggle": {
+    "message": "Currently published - toggle to draft"
+  },
+  "howToExportAnki": {
+    "message": "How to export from Anki:"
+  },
+  "ankiStep1": {
+    "message": "In Anki:"
+  },
+  "ankiStep2": {
+    "message": "Export format:"
+  },
+  "ankiStep3": {
+    "message": "UNCHECK"
+  },
+  "ankiStep3Full": {
+    "message": "\"Include HTML and media references\""
+  },
+  "ankiStep4": {
+    "message": "Click Export"
+  },
+  "fileExport": {
+    "message": "File → Export"
+  },
+  "notesInPlainText": {
+    "message": "Notes in Plain Text (.txt)"
+  },
+  "answer": {
+    "message": "Back"
+  },
+  "answerShown": {
+    "message": "✅ Answer shown! How difficult was this card for you?"
+  },
+  "incorrectAnswerShown": {
+    "message": "❌ Incorrect. The correct answer is shown above. How difficult was this card for you?"
+  },
+  "incorrectAnswerShownSimple": {
+    "message": "❌ Incorrect. The correct answer is shown above."
+  },
+  "correctDifficulty": {
+    "message": "✅ Correct! How difficult was this card for you?"
+  },
+  "filteredByTags": {
+    "message": "Filtered by $COUNT$ tag$PLURAL$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "plural": {
+        "content": "$2"
+      }
+    }
+  },
+  "1m": {
+    "message": "1M"
+  },
+  "3m": {
+    "message": "3M"
+  },
+  "6m": {
+    "message": "6M"
+  },
+  "1y": {
+    "message": "1Y"
+  },
+  "totalCards": {
+    "message": "Total Cards"
+  },
+  "cardsReviewed": {
+    "message": "Cards Reviewed"
+  },
+  "averageAccuracy": {
+    "message": "Average Accuracy"
+  },
+  "studyTime": {
+    "message": "Study Time"
+  },
+  "streakAndToday": {
+    "message": "Streak & Today"
+  },
+  "daysToGo": {
+    "message": "$COUNT$ days to go",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "backlogManagement": {
+    "message": "Backlog Management"
+  },
+  "perDay": {
+    "message": "per day"
+  },
+  "problematicCards": {
+    "message": "Problematic Cards"
+  },
+  "noProblematicCards": {
+    "message": "No problematic cards yet - keep studying!"
+  },
+  "timeWasters": {
+    "message": "Time Wasters"
+  },
+  "avgTimePerCard": {
+    "message": "Avg time per card"
+  },
+  "totalTimeSpent": {
+    "message": "Total time spent"
+  },
+  "failureRate": {
+    "message": "Failure rate"
+  },
+  "noTimeWasters": {
+    "message": "No time wasters identified yet"
+  },
+  "activityHeatMap": {
+    "message": "Activity Heat Map"
+  },
+  "year": {
+    "message": "Year"
+  },
+  "protectStreak": {
+    "message": "⚠️ Answer $COUNT$ more card$PLURAL$ to protect your $STREAK$-day streak",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "plural": {
+        "content": "$2"
+      },
+      "streak": {
+        "content": "$3"
+      }
+    }
+  },
+  "streakSafe": {
+    "message": "✅ Streak safe! You've reached your daily goal."
+  },
+  "backlogProjection": {
+    "message": "Backlog & Projection"
+  },
+  "optimalPace": {
+    "message": "💚 Optimal Pace"
+  },
+  "maintainPace": {
+    "message": "Maintain this pace to clear your backlog efficiently"
+  },
+  "speedUpRecommended": {
+    "message": "⚠️ Speed Up Recommended"
+  },
+  "increaseDaily": {
+    "message": "Increase daily reviews to $COUNT$ to clear in $DAYS$ days",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "days": {
+        "content": "$2"
+      }
+    }
+  },
+  "noBacklogData": {
+    "message": "No backlog data available yet"
+  },
+  "noProblematicCardsYet": {
+    "message": "No problematic cards yet - keep studying!"
+  },
+  "noTimeWastersYet": {
+    "message": "No time wasters identified yet"
+  },
+  "todaysPlan": {
+    "message": "Today's Plan"
+  },
+  "studyCardsOnTrack": {
+    "message": "Study $COUNT$ cards to stay on track",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "noBacklogDataAvailable": {
+    "message": "No backlog data available"
+  },
+  "highAgain": {
+    "message": "High \"Again\""
+  },
+  "highHard": {
+    "message": "High \"Hard\""
+  },
+  "lowEase": {
+    "message": "Low \"Ease\""
+  },
+  "easeDrop": {
+    "message": "\"Ease\" Drop"
+  },
+  "reviews": {
+    "message": "reviews"
+  },
+  "moreTag": {
+    "message": "+$COUNT$ more",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "noProblematicCardsGreat": {
+    "message": "No problematic cards found. Great job! 🎉"
+  },
+  "topTimeWasters30d": {
+    "message": "Top Time-wasters (30d)"
+  },
+  "blocks": {
+    "message": "blocks"
+  },
+  "minCooldown": {
+    "message": "min cooldown"
+  },
+  "noRecentBlocksFound": {
+    "message": "No recent domain blocks found"
+  },
+  "mc": {
+    "message": "MC"
+  },
+  "txt": {
+    "message": "TXT"
+  },
+  "clz": {
+    "message": "CLZ"
+  },
+  "bsc": {
+    "message": "BSC"
+  },
+  "creating": {
+    "message": "Creating..."
+  },
+  "fillInTheBlank": {
+    "message": "Fill in the blank..."
+  },
+  "chirp3HDVoices": {
+    "message": "Chirp3 (HD Voices)"
+  },
+  "tagConfiguredDefaultVoice": {
+    "message": "Tag \"$TAG$\" configured with default voice. Click \"Configure\" to customize.",
+    "placeholders": {
+      "tag": {
+        "content": "$1"
+      }
+    }
+  },
+  "ttsEnabledVoiceNeeded": {
+    "message": "TTS enabled for \"$TAG$\" but voice configuration needed. Click \"Configure\" to set up.",
+    "placeholders": {
+      "tag": {
+        "content": "$1"
+      }
+    }
+  },
+  "toggleViewMode": {
+    "message": "Toggle view mode"
+  },
+  "selectSubjectsForCards": {
+    "message": "Select which subjects to include in blocked page cards"
+  },
+  "xOfXActive": {
+    "message": "$ACTIVE$ of $TOTAL$ active",
+    "placeholders": {
+      "active": {
+        "content": "$1"
+      },
+      "total": {
+        "content": "$2"
+      }
+    }
+  },
+  "whenBlockedOnlyActiveTags": {
+    "message": "When a website is blocked, cards will only be selected from active tags. At least one tag must remain active."
+  },
+  "cannotDeactivate": {
+    "message": "Cannot Deactivate"
+  },
+  "atLeastOneTagActive": {
+    "message": "At least one tag must remain active for study sessions"
+  },
+  "updateFailed": {
+    "message": "Update Failed"
+  },
+  "failedToUpdateTagActivation": {
+    "message": "Failed to update tag activation"
+  },
+  "clearFiltersButton": {
+    "message": "Clear filters"
+  },
+  "noCardsMatchFilters": {
+    "message": "No cards match your filters"
+  },
+  "tryAdjustingFilters": {
+    "message": "Try adjusting your search terms or removing filters."
+  },
+  "saveAndAddAnother": {
+    "message": "Save & Add Another"
+  },
+  "failedToSaveCard": {
+    "message": "Failed to save card"
+  },
+  "chooseCardType": {
+    "message": "Choose Card Type"
+  },
+  "selectCardTypeHelper": {
+    "message": "Select the type of card you want to create"
+  },
+  "basic": {
+    "message": "Basic"
+  },
+  "simpleCardFront": {
+    "message": "Simple card with front and back"
+  },
+  "cloze": {
+    "message": "Cloze (Fill-in)"
+  },
+  "fillInMissingWords": {
+    "message": "Fill in missing words marked with {{c1::text}}"
+  },
+  "saveDraft": {
+    "message": "Save as Draft"
+  },
+  "draftsNotShown": {
+    "message": "Drafts won't be shown in study sessions until published"
+  },
+  "cardFrontRequired": {
+    "message": "Card front is required"
+  },
+  "cardBackRequired": {
+    "message": "Card back is required"
+  },
+  "validationError": {
+    "message": "Validation Error"
+  },
+  "clozeCardAnswersInDeletions": {
+    "message": "Cloze card (answers in deletions)"
+  },
+  "clozeParsingErrors": {
+    "message": "Cloze parsing errors: $ERRORS$",
+    "placeholders": {
+      "errors": {
+        "content": "$1"
+      }
+    }
+  },
+  "markAsDraft": {
+    "message": "Mark as Draft"
+  },
+  "draftCardsWontAppear": {
+    "message": "Draft cards won't appear in study sessions or blocked pages"
+  },
+  "cardType": {
+    "message": "Card Type"
+  },
+  "showAnswerCard": {
+    "message": "Show answer card"
+  },
+  "clozeDeletion": {
+    "message": "Cloze Deletion"
+  },
+  "fillInTheBlanks": {
+    "message": "Fill in the blanks"
+  },
+  "pageXOfY": {
+    "message": "Page $CURRENT$ of $TOTAL$",
+    "placeholders": {
+      "current": {
+        "content": "$1"
+      },
+      "total": {
+        "content": "$2"
+      }
+    }
+  },
+  "exportComplete": {
+    "message": "Export Complete"
+  },
+  "cardsOnlyBackupExported": {
+    "message": "Cards-only backup exported successfully"
+  },
+  "fullBackupExported": {
+    "message": "Full backup exported successfully"
+  },
+  "exportFailed": {
+    "message": "Export Failed"
+  },
+  "unknownError": {
+    "message": "Unknown error"
+  },
+  "conflictDetectionFailed": {
+    "message": "Conflict Detection Failed"
+  },
+  "importComplete": {
+    "message": "Import Complete"
+  },
+  "successfullyImportedXCards": {
+    "message": "Successfully imported $COUNT$ card$PLURAL$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "plural": {
+        "content": "$2"
+      }
+    }
+  },
+  "importFailed": {
+    "message": "Import Failed"
+  },
+  "failedToLoadSnapshots": {
+    "message": "Failed to Load Snapshots"
+  },
+  "restoreComplete": {
+    "message": "Restore Complete"
+  },
+  "dataRestoredFromSnapshot": {
+    "message": "Data has been restored from snapshot successfully"
+  },
+  "restoreFailed": {
+    "message": "Restore Failed"
+  },
+  "snapshotDeleted": {
+    "message": "Snapshot Deleted"
+  },
+  "backupSnapshotDeleted": {
+    "message": "Backup snapshot deleted successfully"
+  },
+  "allDataValid": {
+    "message": "All data appears to be valid"
+  },
+  "xErrorsFound": {
+    "message": "$COUNT$ error$PLURAL$ found",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "plural": {
+        "content": "$2"
+      }
+    }
+  },
+  "xWarningsDetected": {
+    "message": "$COUNT$ warning$PLURAL$ detected. Import will proceed with valid rows.",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "plural": {
+        "content": "$2"
+      }
+    }
+  },
+  "checkAnswer": {
+    "message": "Check Answer"
+  },
+  "studySession": {
+    "message": "Study Session"
+  },
+  "reviewYourDueCards": {
+    "message": "Review your due cards"
+  },
+  "addYourFirstCard": {
+    "message": "Add Your First Card"
+  },
+  "proceedAnyway": {
+    "message": "Proceed Anyway"
+  },
+  "addMoreCards": {
+    "message": "Add More Cards"
+  },
+  "deleteFailed": {
+    "message": "Delete Failed"
+  },
+  "dataValid": {
+    "message": "Data Valid"
+  },
+  "dataIssuesFound": {
+    "message": "Data Issues Found"
+  },
+  "validationFailed": {
+    "message": "Validation Failed"
+  },
+  "htmlExportDetected": {
+    "message": "HTML Export Detected"
+  },
+  "importWarnings": {
+    "message": "Import Warnings"
+  },
+  "xErrorsYWarnings": {
+    "message": "$ERRORS$ error$ERRORPLURAL$, $WARNINGS$ warning$WARNPLURAL$",
+    "placeholders": {
+      "errors": {
+        "content": "$1"
+      },
+      "errorplural": {
+        "content": "$2"
+      },
+      "warnings": {
+        "content": "$3"
+      },
+      "warnplural": {
+        "content": "$4"
+      }
+    }
+  },
+  "allModelsOption": {
+    "message": "All Models"
+  },
+  "selectModelFirstOption": {
+    "message": "Select a model first"
+  },
+  "saveApiKeyToLoadLanguages": {
+    "message": "Save API key to load languages"
+  },
+  "loadingVoicesOption": {
+    "message": "Loading voices..."
+  },
+  "storageStatusSafe": {
+    "message": "Safe"
+  },
+  "storageStatusWarning": {
+    "message": "Warning"
+  },
+  "storageStatusCritical": {
+    "message": "Critical"
+  },
+  "storageStatusExceeded": {
+    "message": "Exceeded"
+  },
+  "storageRecommendationExceeded1": {
+    "message": "CRITICAL: Storage quota exceeded."
+  },
+  "storageRecommendationExceeded2": {
+    "message": "Upgrade to Pro for unlimited storage or manually delete data you no longer need."
+  },
+  "storageRecommendationCritical1": {
+    "message": "CRITICAL: Storage usage is very high (>90%)."
+  },
+  "storageRecommendationCritical2": {
+    "message": "Consider upgrading to Pro or reviewing your data manually."
+  },
+  "storageRecommendationWarning1": {
+    "message": "WARNING: Storage usage is approaching limits (>80%)."
+  },
+  "storageRecommendationWarning2": {
+    "message": "Monitor your storage usage or consider upgrading to Pro."
+  },
+  "storageRecommendationSafe": {
+    "message": "Storage usage is within safe limits."
+  },
+  "storageDataUsage": {
+    "message": "Your $STORENAME$ data is using $SIZEMB$MB of storage.",
+    "placeholders": {
+      "storename": {
+        "content": "$1"
+      },
+      "sizemb": {
+        "content": "$2"
+      }
+    }
+  },
+  "storageNotificationExceeded": {
+    "message": "Storage quota exceeded! Upgrade to Pro or delete data you no longer need."
+  },
+  "storageNotificationCritical": {
+    "message": "Storage usage critical (>90%). Consider upgrading to Pro or reviewing your data."
+  },
+  "storageNotificationWarning": {
+    "message": "Storage usage is approaching limits (>80%). Monitor your usage or upgrade to Pro."
+  },
+  "storageNotificationSafe": {
+    "message": "Storage usage is within safe limits."
+  },
+  "activityCalendar": {
+    "message": "Activity Calendar"
+  },
+  "currentYear": {
+    "message": "current"
+  },
+  "noActivity": {
+    "message": "No activity"
+  },
+  "cardsAnswered": {
+    "message": "cards"
+  },
+  "accuracy": {
+    "message": "accuracy"
+  },
+  "monthJan": {
+    "message": "Jan"
+  },
+  "monthFeb": {
+    "message": "Feb"
+  },
+  "monthMar": {
+    "message": "Mar"
+  },
+  "monthApr": {
+    "message": "Apr"
+  },
+  "monthMay": {
+    "message": "May"
+  },
+  "monthJun": {
+    "message": "Jun"
+  },
+  "monthJul": {
+    "message": "Jul"
+  },
+  "monthAug": {
+    "message": "Aug"
+  },
+  "monthSep": {
+    "message": "Sep"
+  },
+  "monthOct": {
+    "message": "Oct"
+  },
+  "monthNov": {
+    "message": "Nov"
+  },
+  "monthDec": {
+    "message": "Dec"
+  },
+  "daySun": {
+    "message": "Sun"
+  },
+  "dayMon": {
+    "message": "Mon"
+  },
+  "dayTue": {
+    "message": "Tue"
+  },
+  "dayWed": {
+    "message": "Wed"
+  },
+  "dayThu": {
+    "message": "Thu"
+  },
+  "dayFri": {
+    "message": "Fri"
+  },
+  "daySat": {
+    "message": "Sat"
+  },
+  "streakSafeMessage": {
+    "message": "Goal complete! Streak safe for $DAYS$ more day$PLURAL$",
+    "placeholders": {
+      "days": {
+        "content": "$1"
+      },
+      "plural": {
+        "content": "$2"
+      }
+    }
+  },
+  "filterTags": {
+    "message": "Filter Tags"
+  },
+  "tagsCount": {
+    "message": "Tags ($COUNT$)",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "filterByTags": {
+    "message": "Filter by Tags"
+  },
+  "clearAll": {
+    "message": "Clear All"
+  },
+  "selectedCount": {
+    "message": "Selected ($COUNT$):",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "noTagsMatchSearch": {
+    "message": "No tags match your search"
+  },
+  "tagsHelperText": {
+    "message": "Add tags to organize your cards (e.g., Math, English, History)"
+  },
+  "tagsPlaceholder": {
+    "message": "Click to see 3 recent tags or type to search..."
+  },
+  "mostRecentTags": {
+    "message": "3 Most Recent Tags"
+  },
+  "typeToSearchMoreTags": {
+    "message": "Type to search $COUNT$ more tags...",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "moreResults": {
+    "message": "+$COUNT$ more results...",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "tagCount": {
+    "message": "$COUNT$ tag$PLURAL$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "plural": {
+        "content": "$2"
+      }
+    }
+  },
+  "importBackup": {
+    "message": "Import Backup"
+  },
+  "parseFailed": {
+    "message": "Parse Failed"
+  },
+  "importingAnkiCards": {
+    "message": "Importing Anki cards..."
+  },
+  "ankiImportComplete": {
+    "message": "Anki Import Complete"
+  },
+  "successfullyImportedCards": {
+    "message": "Successfully imported $COUNT$ card$PLURAL$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "plural": {
+        "content": "$2"
+      }
+    }
+  },
+  "ankiImportFailed": {
+    "message": "Anki Import Failed"
+  },
+  "selectedFile": {
+    "message": "Selected: $FILENAME$ ($SIZE$ KB)",
+    "placeholders": {
+      "filename": {
+        "content": "$1"
+      },
+      "size": {
+        "content": "$2"
+      }
+    }
+  },
+  "previewFirst": {
+    "message": "Preview (first $COUNT$ card$PLURAL$)",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "plural": {
+        "content": "$2"
+      }
+    }
+  },
+  "importAnkiCards": {
+    "message": "Import Anki Cards"
+  },
+  "manageBackupSnapshots": {
+    "message": "Manage backup snapshots and validate data integrity. Snapshots are automatically created before imports."
+  },
+  "dataIsValid": {
+    "message": "Data is Valid"
+  },
+  "dataIssuesFoundTitle": {
+    "message": "Data Issues Found"
+  },
+  "backupSnapshots": {
+    "message": "Backup Snapshots"
+  },
+  "snapshotsCreatedAutomatically": {
+    "message": "Snapshots are created automatically before each import operation. You can restore from any snapshot to undo changes."
+  },
+  "noBackupSnapshots": {
+    "message": "No backup snapshots available. Snapshots will be created automatically when you import data."
+  },
+  "conflictsDetectedChoose": {
+    "message": "$COUNT$ conflict$PLURAL$ detected. Choose how to resolve each one before proceeding with the import.",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      },
+      "plural": {
+        "content": "$2"
+      }
+    }
+  },
+  "item": {
+    "message": "Item"
+  },
+  "conflict": {
+    "message": "Conflict"
+  },
+  "resolution": {
+    "message": "Resolution"
+  },
+  "newId": {
+    "message": "New ID"
+  },
+  "snapshotDate": {
+    "message": "Date"
+  },
+  "snapshotRestore": {
+    "message": "Restore"
+  },
+  "applyResolutionsImport": {
+    "message": "Apply Resolutions & Import"
+  },
+  "importReport": {
+    "message": "Import Report"
+  },
+  "importSuccessful": {
+    "message": "Import Successful"
+  },
+  "cardsImported": {
+    "message": "Cards imported: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "tagsImported": {
+    "message": "Tags imported: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "cardsSkipped": {
+    "message": "Cards skipped: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "cardsRenamed": {
+    "message": "Cards renamed: $COUNT$",
+    "placeholders": {
+      "count": {
+        "content": "$1"
+      }
+    }
+  },
+  "previewWillAppearHere": {
+    "message": "Preview will appear here..."
+  },
+  "createCard": {
+    "message": "Create Card"
+  },
+  "updateCard": {
+    "message": "Update Card"
+  },
+  "contextMenuAddSelection": {
+    "message": "Add selection as card"
+  },
+  "about": {
+    "message": "About"
+  },
+  "githubRepository": {
+    "message": "GitHub Repository"
+  },
+  "createdBy": {
+    "message": "Created by"
+  },
+  "clozeContentLabel": {
+    "message": "Cloze Content"
+  },
+  "clozeContentPlaceholder": {
+    "message": "Enter your text and wrap words to hide with {{c1::word}}. You can use Markdown formatting."
+  },
+  "clozeContentHelper": {
+    "message": "Wrap text you want to hide with {{c1::text}} for the first card, {{c2::text}} for the second, etc. You can add hints like {{c1::answer::hint}}. Each cloze deletion creates a separate card."
+  }
+}

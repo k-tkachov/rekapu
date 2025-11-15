@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="websiteBlocked">Website Blocked</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            background: transparent !important;
+            background-color: transparent !important;
+        }
+
+        /* Full tab mode (study session) - use lighter background so card stands out */
+        html.study-mode {
+            background: #292a2d !important;
+            background-color: #292a2d !important;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            background: transparent !important;
+            background-color: transparent !important;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #e8eaed;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Full tab mode (study session) - use lighter background so card stands out */
+        html.study-mode body {
+            background: #292a2d !important;
+            background-color: #292a2d !important;
+        }
+
+        .container {
+            background: #202124;
+            border: 1px solid #3c4043;
+            border-radius: 6px;
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.85);
+            padding: 2rem;
+            max-width: 640px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .logo {
+            width: 64px;
+            height: 64px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: #202124;
+            font-size: 3.5rem;
+            font-weight: 600;
+            animation: ghostAppear 0.8s ease-out forwards;
+        }
+
+        @keyframes ghostAppear {
+            0% {
+                opacity: 0;
+                transform: translateY(20px) scale(0.8) rotate(-10deg);
+            }
+            25% {
+                opacity: 0.5;
+                transform: translateY(-5px) scale(1.05) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(0) scale(1) rotate(10deg);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1) rotate(0deg);
+            }
+        }
+
+        h1 {
+            color: #e8eaed;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .domain {
+            color: #8AB4F8;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .description {
+            color: #9aa0a6;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+
+        .card-container {
+            background: #292a2d;
+            border: 1px solid #3c4043;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .card-section {
+            padding: 2rem;
+            text-align: center;
+            background: #292a2d;
+            border-bottom: 2px solid #35363a;
+            position: relative;
+        }
+
+        .card-label {
+            color: #5f6368;
+            font-size: 0.75rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .card-text {
+            color: #e8eaed;
+            font-size: 1.25rem;
+            line-height: 1.5;
+            font-weight: 500;
+            min-height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .tts-button {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #292a2d;
+            border: 1px solid #3c4043;
+            color: #8AB4F8;
+            width: 36px;
+            height: 36px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .tts-button:hover {
+            background: #35363a;
+            border-color: #8AB4F8;
+        }
+
+        .tts-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .tts-button.playing {
+            /* Keep blue color when playing */
+        }
+        
+        /* Toggle icons based on state */
+        .tts-button .tts-icon-speaker {
+            display: block;
+        }
+        
+        .tts-button .tts-icon-loading {
+            display: none;
+        }
+        
+        .tts-button.downloading .tts-icon-speaker {
+            display: none;
+        }
+        
+        .tts-button.downloading .tts-icon-loading {
+            display: block;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .card-options {
+            margin-top: 1.5rem;
+            width: 100%;
+        }
+
+        .answer-section {
+            padding: 2rem;
+            text-align: center;
+            background: #292a2d;
+            border-top: 2px solid #35363a;
+            position: relative;
+        }
+
+        #inputContainer {
+            margin-bottom: 2rem;
+        }
+
+        .answer-input {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid #3c4043;
+            border-radius: 6px;
+            font-size: 1rem;
+            background: #292a2d;
+            color: #e8eaed;
+            transition: all 0.2s ease;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .answer-input:focus {
+            outline: none;
+            border-color: #8AB4F8;
+            box-shadow: 0 0 0 3px rgba(138, 180, 248, 0.12);
+        }
+
+        .answer-input::placeholder {
+            color: #5f6368;
+            font-weight: 400;
+        }
+
+        .submit-btn {
+            background: #34A853;
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-right: 1rem;
+            position: relative;
+        }
+
+        .study-mode .submit-btn {
+            margin-right: 0;
+        }
+
+        .submit-btn:hover {
+            background: #46B968;
+        }
+
+        .submit-btn:disabled {
+            background: #5f6368;
+            cursor: not-allowed;
+        }
+
+        .skip-btn {
+            background: transparent;
+            color: #9aa0a6;
+            border: 1px solid #3c4043;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .skip-btn:hover {
+            background: #35363a;
+            border-color: #5f6368;
+            color: #e8eaed;
+        }
+
+        .feedback {
+            margin: 1rem 0;
+            padding: 0.75rem;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .feedback.correct {
+            background: rgba(129, 201, 149, 0.15);
+            color: #81C995;
+            border: 1px solid rgba(129, 201, 149, 0.4);
+        }
+
+        .feedback.incorrect {
+            background: rgba(242, 139, 130, 0.15);
+            color: #F28B82;
+            border: 1px solid rgba(242, 139, 130, 0.4);
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #3c4043;
+            border-top: 2px solid #8AB4F8;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Card type specific styles */
+        .option-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            padding: 0.75rem 1rem;
+            border: 1px solid #3c4043;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: #292a2d;
+            color: #e8eaed;
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: left;
+        }
+
+        .option-label:hover {
+            border-color: #8AB4F8;
+            background: #35363a;
+        }
+
+        .option-label input[type="radio"],
+        .option-label input[type="checkbox"] {
+            margin-right: 0.5rem;
+        }
+
+        .show-answer-label {
+            color: #5f6368;
+            font-size: 0.75rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .show-answer-text {
+            color: #e8eaed;
+            font-size: 1.25rem;
+            line-height: 1.5;
+            font-weight: 500;
+            min-height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Difficulty feedback buttons */
+        .difficulty-container {
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .difficulty-label {
+            color: #9aa0a6;
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+        }
+
+        .difficulty-buttons {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .difficulty-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.375rem;
+        }
+
+        .difficulty-time {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #5f6368;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .difficulty-btn {
+            position: relative;
+        }
+
+        .difficulty-btn::after {
+            content: attr(data-shortcut);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #202124;
+            border: 1px solid #3c4043;
+            color: #e8eaed;
+            padding: 0.375rem 0.5rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s, visibility 0.2s;
+            z-index: 1000;
+            pointer-events: none;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .difficulty-btn:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Submit button tooltip */
+        .submit-btn::after {
+            content: attr(data-shortcut);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #202124;
+            border: 1px solid #3c4043;
+            color: #e8eaed;
+            padding: 0.375rem 0.5rem;
+            border-radius: 6px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s, visibility 0.2s;
+            z-index: 1000;
+            pointer-events: none;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        }
+
+        .submit-btn:hover::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .difficulty-btn {
+            background: #292a2d;
+            border: 1px solid #3c4043;
+            color: #e8eaed;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            min-width: 80px;
+        }
+
+        .difficulty-btn:hover {
+            border-color: #5f6368;
+            background: #35363a;
+        }
+
+        .difficulty-btn.again {
+            border-color: #F28B82;
+            color: #F28B82;
+        }
+
+        .difficulty-btn.again:hover {
+            background: rgba(242, 139, 130, 0.15);
+            border-color: #F28B82;
+        }
+
+        .difficulty-btn.hard {
+            border-color: #FCC934;
+            color: #FCC934;
+        }
+
+        .difficulty-btn.hard:hover {
+            background: rgba(252, 201, 52, 0.15);
+            border-color: #FCC934;
+        }
+
+        .difficulty-btn.good {
+            border-color: #81C995;
+            color: #81C995;
+        }
+
+        .difficulty-btn.good:hover {
+            background: rgba(129, 201, 149, 0.15);
+            border-color: #81C995;
+        }
+
+        .difficulty-btn.easy {
+            border-color: #8AB4F8;
+            color: #8AB4F8;
+        }
+
+        .difficulty-btn.easy:hover {
+            background: rgba(138, 180, 248, 0.15);
+            border-color: #8AB4F8;
+                }
+
+        /* No cards available state */
+        .no-cards-container {
+            text-align: center;
+            padding: 2rem;
+            display: none;
+        }
+
+        .no-cards-message {
+            color: #e8eaed;
+            margin-bottom: 1.5rem;
+            line-height: 1.5;
+        }
+
+        .no-cards-message h3 {
+            color: #e8eaed;
+            margin-bottom: 0.5rem;
+        }
+
+        .no-cards-message p {
+            color: #9aa0a6;
+        }
+
+        .no-cards-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+
+        .action-btn {
+            background: #34A853;
+            color: white;
+            border: none;
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            text-decoration: none;
+            display: inline-block;
+            white-space: nowrap;
+            min-width: 120px;
+        }
+
+        .action-btn:hover {
+            background: #46B968;
+        }
+
+        .action-btn.secondary {
+            background: transparent;
+            color: #9aa0a6;
+            border: 1px solid #3c4043;
+        }
+
+        .action-btn.secondary:hover {
+            background: #35363a;
+            border-color: #5f6368;
+            color: #e8eaed;
+        }
+    </style>
+</head>
+    <body tabindex="0">
+    <div class="container">
+        <div class="logo">👻</div>
+        <h1 data-i18n="websiteBlocked">Website Blocked</h1>
+        <div class="domain" id="domainName" data-i18n="loading">Loading...</div>
+        <div class="description" data-i18n="answerToContinue">
+            Answer a card to continue browsing.
+        </div>
+
+        <div class="card-container" id="cardContainer">
+            <div class="card-section">
+                <button class="tts-button" id="ttsFrontButton" style="display: none;" data-i18n-title="playCardAudio">
+                    <!-- Speaker icon (normal state) -->
+                    <svg class="tts-icon-speaker" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                    </svg>
+                    <!-- Download/spinner icon (downloading state) -->
+                    <svg class="tts-icon-loading" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                        <line x1="12" y1="2" x2="12" y2="6"></line>
+                        <line x1="12" y1="18" x2="12" y2="22"></line>
+                        <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
+                        <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
+                        <line x1="2" y1="12" x2="6" y2="12"></line>
+                        <line x1="18" y1="12" x2="22" y2="12"></line>
+                        <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
+                        <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+                    </svg>
+                </button>
+                <div class="card-label" data-i18n="card">Card</div>
+                <div class="card-text" id="cardText">
+                    <div class="markdown-content" data-i18n="loadingCard">Loading card...</div>
+                </div>
+            </div>
+            <div class="answer-section" id="answerSection" style="display: none;">
+                <button class="tts-button" id="ttsButton" style="display: none;" data-i18n-title="playAnswerAudio">
+                    <!-- Speaker icon (normal state) -->
+                    <svg class="tts-icon-speaker" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                    </svg>
+                    <!-- Download/spinner icon (downloading state) -->
+                    <svg class="tts-icon-loading" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                        <line x1="12" y1="2" x2="12" y2="6"></line>
+                        <line x1="12" y1="18" x2="12" y2="22"></line>
+                        <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
+                        <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
+                        <line x1="2" y1="12" x2="6" y2="12"></line>
+                        <line x1="18" y1="12" x2="22" y2="12"></line>
+                        <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
+                        <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+                    </svg>
+                </button>
+                <div id="answerContainer">
+                    <!-- Dynamic content will be inserted here based on card type -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Input field outside the card -->
+        <div id="inputContainer" style="display: none;">
+            <input 
+                type="text" 
+                class="answer-input" 
+                id="answerInput" 
+                data-i18n-placeholder="typeAnswer"
+                disabled
+            >
+        </div>
+
+        <div id="feedback" class="feedback" style="display: none;"></div>
+
+        <div class="difficulty-container" id="difficultyContainer" style="display: none;">
+            <div class="difficulty-buttons">
+                <div class="difficulty-option">
+                    <div class="difficulty-time" id="timeAgain">1m</div>
+                    <button class="difficulty-btn again" data-difficulty="again" data-i18n-shortcut="press1" data-i18n="again">Again</button>
+                </div>
+                <div class="difficulty-option">
+                    <div class="difficulty-time" id="timeHard">6m</div>
+                    <button class="difficulty-btn hard" data-difficulty="hard" data-i18n-shortcut="press2" data-i18n="hard">Hard</button>
+                </div>
+                <div class="difficulty-option">
+                    <div class="difficulty-time" id="timeGood">1d</div>
+                    <button class="difficulty-btn good" data-difficulty="good" data-i18n-shortcut="press3" data-i18n="good">Good</button>
+                </div>
+                <div class="difficulty-option">
+                    <div class="difficulty-time" id="timeEasy">4d</div>
+                    <button class="difficulty-btn easy" data-difficulty="easy" data-i18n-shortcut="press4" data-i18n="easy">Easy</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="actionButtons">
+            <button class="submit-btn" id="submitBtn" disabled data-i18n-shortcut="pressSpaceOrEnter" tabindex="0">
+                <span id="submitText" data-i18n="submitAnswer">Submit Answer</span>
+                <div class="loading" id="submitLoading" style="display: none;"></div>
+            </button>
+            <button class="skip-btn" id="skipBtn" disabled data-i18n="studyAllDue">
+                Study Due Cards
+            </button>
+        </div>
+
+        <div id="proceedContainer" style="display: none; text-align: center;">
+            <button class="submit-btn" id="proceedToWebsiteBtn" data-i18n="proceedToWebsite">
+                Proceed to Website
+            </button>
+        </div>
+
+        <div class="no-cards-container" id="noCardsContainer">
+            <div class="no-cards-message">
+                <h3 data-i18n="greatJob">🎉 Great job!</h3>
+                <p data-i18n="workedThroughAll">You've worked through all available cards. You can add more cards to continue learning, or proceed to the website.</p>
+            </div>
+            <div class="no-cards-buttons">
+                <button class="action-btn" id="addCardsBtn" data-i18n="addCards">
+                    Add Cards
+                </button>
+                <button class="action-btn secondary" id="proceedBtn" data-i18n="proceedToWebsite">
+                    Proceed to Website
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Universal markdown styles -->
+    <link rel="stylesheet" href="styles/markdown.css">
+    
+    <!-- Hidden audio element for TTS playback -->
+    <audio id="ttsAudio" style="display: none;"></audio>
+    
+    <!-- Marked.js for markdown rendering -->
+    <script src="vendor/marked.js"></script>
+    <script src="blocked.js"></script>
+</body>
+</html> 

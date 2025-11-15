@@ -1,0 +1,8 @@
+#separator:tab
+#html:false
+#tags column:3
+
+What is λ (lambda)?	Lambda calculus is a formal system in mathematical logic	programming λ-calculus
+Emoji test 😀	Testing emoji support in Anki import 🎉	testing emoji
+Unicode test: 你好	Chinese characters: 你好 means hello	language chinese
+

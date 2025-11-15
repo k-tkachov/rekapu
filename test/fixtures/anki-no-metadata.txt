@@ -1,0 +1,3 @@
+What is React?	A JavaScript library for building user interfaces
+What is TypeScript?	A typed superset of JavaScript
+

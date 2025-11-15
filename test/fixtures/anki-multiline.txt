@@ -1,0 +1,6 @@
+#separator:tab
+#html:false
+
+What is a closure in JavaScript?	A closure is a function that has access to variables in its outer (enclosing) lexical scope, even after the outer function has returned.
+Explain REST API	REST (Representational State Transfer) is an architectural style for designing networked applications. It uses HTTP requests to GET, PUT, POST and DELETE data.
+

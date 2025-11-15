@@ -1,0 +1,126 @@
+{
+  "title": "Privacy Policy",
+  "lastUpdated": "Last updated: November 14, 2025",
+  "intro": "At Rekapu, we take your privacy seriously. This policy explains what data we collect (spoiler: almost nothing) and how we handle it.",
+  "tldr": {
+    "title": "TL;DR",
+    "points": [
+      "All your data stays in your browser",
+      "We don't track you",
+      "We don't use cookies",
+      "We don't collect personal information",
+      "No analytics, no ads, no third-party tracking"
+    ]
+  },
+  "dataCollection": {
+    "title": "Data Collection",
+    "extension": {
+      "title": "Extension Data",
+      "description": "Rekapu stores all data locally in your browser using Chrome's IndexedDB storage. This includes:",
+      "items": [
+        "Your flashcards and questions",
+        "Your blocked domains list",
+        "Your learning progress and statistics",
+        "Extension settings and preferences"
+      ],
+      "note": "This data never leaves your device. We literally cannot access it."
+    },
+    "website": {
+      "title": "Website Data",
+      "description": "This website (rekapu.com) may use Cloudflare Analytics, which provides basic traffic statistics without tracking individual users. Cloudflare Analytics:",
+      "items": [
+        "Does not use cookies",
+        "Does not track you across websites",
+        "Does not collect personal information",
+        "Provides only aggregated, anonymous statistics"
+      ]
+    }
+  },
+  "thirdParty": {
+    "title": "Third-Party Services",
+    "tts": {
+      "title": "Text-to-Speech (Optional)",
+      "description": "If you choose to enable Text-to-Speech functionality and provide your own Google Cloud TTS API key, audio synthesis requests are sent directly to Google's servers. We do not:",
+      "items": [
+        "Store or access your API key",
+        "See what content you're synthesizing",
+        "Track your TTS usage"
+      ],
+      "note": "Your API key is stored only in your browser's local storage. Google's privacy policy applies to TTS requests you make using your API key."
+    },
+    "chromeWebStore": {
+      "title": "Chrome Web Store",
+      "description": "When you install Rekapu from the Chrome Web Store, Google may collect basic analytics such as:",
+      "items": [
+        "Number of installations",
+        "Extension version",
+        "General geographic region"
+      ],
+      "note": "This data is collected by Google, not by us. See Google's Chrome Web Store privacy policy for details."
+    }
+  },
+  "permissions": {
+    "title": "Browser Permissions",
+    "description": "Rekapu requires certain browser permissions to function:",
+    "items": [
+      {
+        "permission": "storage, unlimitedStorage",
+        "reason": "To save your flashcards, settings, and learning progress locally"
+      },
+      {
+        "permission": "tabs, webNavigation",
+        "reason": "To detect when you visit blocked domains"
+      },
+      {
+        "permission": "scripting",
+        "reason": "To display the question overlay on blocked sites"
+      },
+      {
+        "permission": "alarms",
+        "reason": "To manage cooldown periods"
+      },
+      {
+        "permission": "contextMenus",
+        "reason": "To provide right-click menu options"
+      },
+      {
+        "permission": "<all_urls>",
+        "reason": "To block any domain you choose (you configure which domains to block)"
+      }
+    ],
+    "note": "These permissions are used only for extension functionality, never for tracking or data collection."
+  },
+  "dataSharing": {
+    "title": "Data Sharing",
+    "description": "We do not share, sell, or transfer your data to anyone. Period.",
+    "points": [
+      "No third-party analytics",
+      "No advertising networks",
+      "No data brokers",
+      "No marketing partners"
+    ]
+  },
+  "dataRetention": {
+    "title": "Data Retention",
+    "description": "Since all data is stored locally in your browser, you have complete control:",
+    "items": [
+      "You can export your data at any time via the extension's backup feature",
+      "You can delete all data by uninstalling the extension or clearing browser data",
+      "Data persists only as long as you keep it in your browser"
+    ]
+  },
+  "yourRights": {
+    "title": "Your Rights",
+    "description": "Since we don't collect your data, there's nothing for you to request access to or deletion of. You already have complete control over all your data in your browser."
+  },
+  "changes": {
+    "title": "Changes to This Policy",
+    "description": "If we update this privacy policy, we'll post the new version on this page with an updated revision date. Since we don't collect email addresses, we can't notify you directly."
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "If you have questions about this privacy policy, you can:"
+  },
+  "footer": "By using Rekapu, you agree to this privacy policy."
+}
+

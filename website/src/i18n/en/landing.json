@@ -1,0 +1,110 @@
+{
+  "hero": {
+    "title": "Learn while procrastinating",
+    "subtitle": "Transform your distractions into learning moments. Rekapu shows you flashcards when you visit blocked sites, turning procrastination into productive knowledge building with scientifically-proven spaced repetition.",
+    "readDocs": "Read the docs",
+    "privacyNote": "All data stays in your browser. No account required.",
+    "screenshotAlt": "Screenshot: Question overlay on blocked site"
+  },
+  "problem": {
+    "title": "Website blockers stop you.",
+    "titleHighlight": "Rekapu teaches you.",
+    "description": "Instead of hitting a wall, you answer a question. Your knowledge grows while your focus improves. No extra apps. No dedicated study time. Just learning integrated into your day."
+  },
+  "overlay": {
+    "badge": "Unlike other blockers",
+    "title": "Your scroll position stays put",
+    "description": "Other blockers redirect you to a new page. You lose your place, your context, everything. Rekapu uses an overlay approach—after answering, you continue exactly where you left off.",
+    "benefit1": "No page reload",
+    "benefit2": "Scroll position preserved",
+    "benefit3": "JavaScript state intact",
+    "screenshotAlt": "Diagram: Before/After showing preserved scroll",
+    "preservedBadge": "Page state preserved"
+  },
+  "features": {
+    "title": "Powerful learning tools",
+    "subtitle": "Everything you need to learn effectively",
+    "spacedRepetition": {
+      "title": "Spaced Repetition",
+      "description": "Science-backed algorithm that shows cards at optimal intervals. Rate difficulty and let the algorithm handle scheduling for maximum retention."
+    },
+    "tts": {
+      "title": "Text-to-Speech",
+      "description": "Listen to your cards with natural voice synthesis powered by Google TTS. Perfect for audio learners and language practice.<br>*Requires your own API key."
+    },
+    "statistics": {
+      "title": "Daily Goals & Streaks",
+      "description": "Activity calendar visualizes your consistency. Build learning streaks, hit daily goals, and watch your progress compound over time."
+    },
+    "anki": {
+      "title": "Anki Import",
+      "description": "Already have decks in Anki? Import plain text (.txt) files instantly. No need to recreate your cards - just bring your existing knowledge base."
+    },
+    "markdown": {
+      "title": "Markdown Support",
+      "description": "Format cards with markdown syntax. Add code blocks, lists, bold text, links, and embed images. Perfect for technical content and rich learning materials."
+    },
+    "privacy": {
+      "title": "100% Private",
+      "description": "All data stored locally in your browser. No servers, no tracking, no accounts. Your cards and browsing habits stay completely private."
+    },
+    "control": {
+      "title": "Flexible Control",
+      "description": "Customize cooldown periods per site, block by domain or subdomain, tag your cards for organization. Full control over your learning experience."
+    }
+  },
+  "howItWorks": {
+    "title": "How it works",
+    "subtitle": "Three steps. That's it.",
+    "step1": {
+      "title": "Navigate to a blocked site",
+      "description": "Try to access Twitter, Reddit, or any site you've added to your block list.",
+      "screenshotAlt": "Screenshot: Blocked site"
+    },
+    "step2": {
+      "title": "Review a card",
+      "description": "A flashcard appears as an overlay. Study the content, reveal the answer, and rate how well you knew it. The spaced repetition algorithm adjusts the next review time based on your rating.",
+      "screenshotAlt": "Screenshot: Question overlay"
+    },
+    "step3": {
+      "title": "Continue where you left off",
+      "description": "The site unlocks for your customizable cooldown period. Page state is preserved - no reload, no lost context. Track your daily progress and maintain your learning streak.",
+      "screenshotAlt": "Screenshot: Unlocked site"
+    }
+  },
+  "faq": {
+    "title": "Common questions",
+    "items": [
+      {
+        "question": "Can I study without visiting blocked sites?",
+        "answer": "Yes! Open the extension popup and click \"Study Due Cards\" to review all cards in one focused session. When you're done, all blocked sites become accessible again."
+      },
+      {
+        "question": "How do I add new cards?",
+        "answer": "Three ways: (1) Click \"Add Card\" in the extension popup. (2) Select text on any page, right-click, and choose \"Add selection as card\". (3) Import Anki decks in plain text format (.txt)."
+      },
+      {
+        "question": "What sites should I block?",
+        "answer": "Block time-wasters and sites you feel guilty about - social media, YouTube, Reddit. Don't block work tools like email, Slack, or search engines. The goal is productive friction, not frustration."
+      },
+      {
+        "question": "Does it support fill-in-the-blank cards?",
+        "answer": "Yes! They're called Cloze Deletion cards. Use the syntax {{c1::hidden text}} in your card content. Perfect for memorizing facts, formulas, or vocabulary."
+      },
+      {
+        "question": "How do I edit or remove a blocked domain?",
+        "answer": "Important: You can only edit domains when they're unblocked. Visit the site, answer a card to unlock it, then open the extension popup → Domains tab to make changes. This prevents accidental modifications."
+      },
+      {
+        "question": "What browsers work with Rekapu?",
+        "answer": "Any Chromium-based browser: Chrome, Brave, Edge, Opera, Vivaldi. Requires version 88 or higher."
+      }
+    ],
+    "moreLink": "More questions? Check the full FAQ"
+  },
+  "cta": {
+    "title": "Turn distractions into knowledge",
+    "subtitle": "Free forever. No account needed. All data stays in your browser."
+  }
+}
+

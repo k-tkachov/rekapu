@@ -1,0 +1,28 @@
+---
+import { getPageTranslations } from '../i18n/utils';
+const locale = Astro.currentLocale || 'en';
+const t = await getPageTranslations(locale, 'common');
+---
+
+<footer class="border-t border-dark-border bg-dark-bg-secondary/50">
+  <div class="max-w-7xl mx-auto px-6 py-8">
+    <div class="text-center space-y-3">
+      <p class="text-sm text-dark-text-secondary">
+        © 2025 Rekapu • <a href={`/${locale}/privacy`} class="hover:text-brand-400 transition-colors">{t.footer.privacy}</a>
+      </p>
+      <div class="flex items-center justify-center gap-2 text-xs text-dark-text-secondary">
+        <span>
+          {t.footer.createdBy}{' '}
+          <a 
+            href="https://x.com/keerealx" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="text-brand-400 hover:text-brand-300 hover:underline transition-colors"
+          >
+            @keerealx
+          </a>
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>

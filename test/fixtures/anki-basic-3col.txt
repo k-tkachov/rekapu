@@ -1,0 +1,9 @@
+#separator:tab
+#html:false
+#tags column:3
+
+What is React?	A JavaScript library for building user interfaces	programming react frontend
+What is TypeScript?	A typed superset of JavaScript that compiles to plain JavaScript	programming typescript
+What does API stand for?	Application Programming Interface	programming web
+What is IndexedDB?	A low-level API for client-side storage	web storage database
+

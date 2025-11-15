@@ -1,0 +1,4 @@
+﻿#separator:tab
+#html:false
+
+What is UTF-8?	A character encoding standard

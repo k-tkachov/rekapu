@@ -1,0 +1,123 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { getPageTranslations } from '../i18n/utils';
+
+interface Props {
+  frontmatter: {
+    title: string;
+    description: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+const locale = Astro.currentLocale || 'en';
+const t = await getPageTranslations(locale, 'docs');
+---
+
+<BaseLayout title={`${frontmatter.title} - Rekapu`} description={frontmatter.description}>
+  <div class="max-w-7xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-16">
+      <!-- Sidebar -->
+      <aside class="hidden lg:block">
+        <nav class="sticky top-24 space-y-10">
+          <div>
+            <h3 class="text-xs font-medium mb-4 text-dark-text uppercase tracking-wider">
+              {t.sidebar.gettingStarted}
+            </h3>
+            <ul class="space-y-2.5">
+              <li>
+                <a href={`/${locale}/docs/installation`} class="text-sm text-dark-text-secondary hover:text-brand-400 transition-colors block">
+                  {t.sidebar.installation}
+                </a>
+              </li>
+              <li>
+                <a href={`/${locale}/docs/quick-start`} class="text-sm text-dark-text-secondary hover:text-brand-400 transition-colors block">
+                  {t.sidebar.quickStart}
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xs font-medium mb-4 text-dark-text uppercase tracking-wider">
+              {t.sidebar.guides}
+            </h3>
+            <ul class="space-y-2.5">
+              <li>
+                <a href={`/${locale}/docs/question-management`} class="text-sm text-dark-text-secondary hover:text-brand-400 transition-colors block">
+                  {t.sidebar.questionManagement}
+                </a>
+              </li>
+              <li>
+                <a href={`/${locale}/docs/markdown-guide`} class="text-sm text-dark-text-secondary hover:text-brand-400 transition-colors block">
+                  {t.sidebar.markdownGuide}
+                </a>
+              </li>
+              <li>
+                <a href={`/${locale}/docs/domain-blocking`} class="text-sm text-dark-text-secondary hover:text-brand-400 transition-colors block">
+                  {t.sidebar.domainBlocking}
+                </a>
+              </li>
+              <li>
+                <a href={`/${locale}/docs/spaced-repetition`} class="text-sm text-dark-text-secondary hover:text-brand-400 transition-colors block">
+                  {t.sidebar.spacedRepetition}
+                </a>
+              </li>
+              <li>
+                <a href={`/${locale}/docs/question-types`} class="text-sm text-dark-text-secondary hover:text-brand-400 transition-colors block">
+                  {t.sidebar.questionTypes}
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xs font-medium mb-4 text-dark-text uppercase tracking-wider">
+              {t.sidebar.advanced}
+            </h3>
+            <ul class="space-y-2.5">
+              <li>
+                <a href={`/${locale}/docs/backup`} class="text-sm text-dark-text-secondary hover:text-brand-400 transition-colors block">
+                  {t.sidebar.backup}
+                </a>
+              </li>
+              <li>
+                <a href={`/${locale}/docs/anki-import`} class="text-sm text-dark-text-secondary hover:text-brand-400 transition-colors block">
+                  {t.sidebar.ankiImport}
+                </a>
+              </li>
+              <li>
+                <a href={`/${locale}/docs/storage`} class="text-sm text-dark-text-secondary hover:text-brand-400 transition-colors block">
+                  {t.sidebar.storage}
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xs font-medium mb-4 text-dark-text uppercase tracking-wider">
+              {t.sidebar.help}
+            </h3>
+            <ul class="space-y-2.5">
+              <li>
+                <a href={`/${locale}/docs/faq`} class="text-sm text-dark-text-secondary hover:text-brand-400 transition-colors block">
+                  {t.sidebar.faq}
+                </a>
+              </li>
+              <li>
+                <a href={`/${locale}/docs/troubleshooting`} class="text-sm text-dark-text-secondary hover:text-brand-400 transition-colors block">
+                  {t.sidebar.troubleshooting}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </aside>
+
+      <!-- Content -->
+      <article class="prose max-w-none">
+        <slot />
+      </article>
+    </div>
+  </div>
+</BaseLayout>

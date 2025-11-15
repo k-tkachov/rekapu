@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import DocLayout from '../../../layouts/DocLayout.astro';
+
+export async function getStaticPaths() {
+  const config = await import('../../../../astro.config.mjs');
+  const locales = config.default.i18n?.locales || ['en'];
+  
+  const allPaths = [];
+  
+  for (const lang of locales) {
+    const docsEntries = await getCollection('docs', ({ id, data }) => {
+      return id.startsWith(`${lang}/`) && !data.draft;
+    });
+    
+    docsEntries.forEach(doc => {
+      const slug = doc.id.replace(`${lang}/`, '').replace('.md', '');
+      
+      allPaths.push({
+        params: { lang, slug },
+        props: { doc }
+      });
+    });
+  }
+  
+  return allPaths;
+}
+
+const { doc } = Astro.props;
+const { Content } = await doc.render();
+---
+
+<DocLayout frontmatter={doc.data}>
+  <Content />
+</DocLayout>
