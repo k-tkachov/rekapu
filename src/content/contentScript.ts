@@ -545,9 +545,6 @@ function cleanupEventListeners(): void {
       };
     }
     
-    // Clean up when page unloads (just in case)
-    window.addEventListener('unload', cleanupEventListeners, { once: true });
-    
   } catch (error) {
     if (!(error instanceof Error && error.message === 'CONTEXT_INVALIDATED')) {
       console.error('Error initializing Rekapu blocking:', error);
