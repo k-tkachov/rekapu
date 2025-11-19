@@ -6,7 +6,7 @@ import { getTranslations } from '../../i18n/utils';
 export async function getStaticPaths() {
   const config = await import('../../../astro.config.mjs');
   const locales = config.default.i18n?.locales || ['en'];
-  
+
   return locales.map(lang => ({
     params: { lang },
   }));
@@ -28,7 +28,13 @@ const { landing, common, meta } = await getTranslations(lang);
           {landing.hero.subtitle}
         </p>
         <div class="flex flex-wrap gap-4 items-center">
-          <Button href="#" variant="primary" size="lg">
+          <Button
+            href="https://chromewebstore.google.com/detail/rekapu/lbbjjejkepnemhcbhcccjcenkhmkkbdm"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="primary"
+            size="lg"
+          >
             {common.cta.addToChrome}
           </Button>
         </div>
@@ -36,11 +42,11 @@ const { landing, common, meta } = await getTranslations(lang);
           {landing.hero.privacyNote}
         </p>
       </div>
-      
+
       <!-- Hero Screenshot -->
       <div class="relative lg:translate-y-8">
         <div class="relative rounded-2xl overflow-hidden border border-dark-border bg-dark-bg-secondary shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-300">
-          <img 
+          <img
             src={`/${lang}/hero_screenshot.webp`}
             alt={landing.hero.screenshotAlt}
             class="w-full h-auto"
@@ -72,7 +78,7 @@ const { landing, common, meta } = await getTranslations(lang);
       <h2 class="text-4xl md:text-5xl font-medium mb-4">{landing.features.title}</h2>
       <p class="text-xl text-dark-text-secondary">{landing.features.subtitle}</p>
     </div>
-    
+
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- Spaced Repetition -->
       <div class="group relative p-8 rounded-2xl bg-gradient-to-br from-dark-bg to-dark-bg-secondary border border-dark-border hover:border-brand-500/50 transition-all duration-300">
@@ -134,7 +140,7 @@ const { landing, common, meta } = await getTranslations(lang);
       <h2 class="text-4xl font-medium mb-4">{landing.howItWorks.title}</h2>
       <p class="text-xl text-dark-text-secondary">{landing.howItWorks.subtitle}</p>
     </div>
-    
+
     <div class="space-y-24">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
@@ -149,7 +155,7 @@ const { landing, common, meta } = await getTranslations(lang);
           </p>
         </div>
         <div class="rounded-2xl overflow-hidden border border-dark-border bg-dark-bg-secondary">
-          <img 
+          <img
             src={`/${lang}/step1.webp`}
             alt={landing.howItWorks.step1.screenshotAlt}
             class="w-full h-auto"
@@ -161,7 +167,7 @@ const { landing, common, meta } = await getTranslations(lang);
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div class="order-2 lg:order-1 rounded-2xl overflow-hidden border border-dark-border bg-dark-bg-secondary">
-          <img 
+          <img
             src={`/${lang}/step2.webp`}
             alt={landing.howItWorks.step2.screenshotAlt}
             class="w-full h-auto"
@@ -195,7 +201,7 @@ const { landing, common, meta } = await getTranslations(lang);
           </p>
         </div>
         <div class="rounded-2xl overflow-hidden border border-dark-border bg-dark-bg-secondary">
-          <img 
+          <img
             src="/step3.webp"
             alt={landing.howItWorks.step3.screenshotAlt}
             class="w-full h-auto"
@@ -214,10 +220,10 @@ const { landing, common, meta } = await getTranslations(lang);
         <details class="group rounded-xl border border-dark-border bg-dark-bg-secondary overflow-hidden">
           <summary class="flex items-center justify-between p-6 cursor-pointer list-none hover:bg-dark-bg-secondary/80 transition-colors">
             <h3 class="text-xl font-medium pr-4">{item.question}</h3>
-            <svg 
-              class="w-5 h-5 text-dark-text-secondary transition-transform group-open:rotate-180 flex-shrink-0" 
-              fill="none" 
-              stroke="currentColor" 
+            <svg
+              class="w-5 h-5 text-dark-text-secondary transition-transform group-open:rotate-180 flex-shrink-0"
+              fill="none"
+              stroke="currentColor"
               viewBox="0 0 24 24"
             >
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -239,7 +245,13 @@ const { landing, common, meta } = await getTranslations(lang);
     <p class="text-xl text-dark-text-secondary mb-10 max-w-2xl mx-auto">
       {landing.cta.subtitle}
     </p>
-    <Button href="#" variant="primary" size="lg">
+    <Button 
+      href="https://chromewebstore.google.com/detail/rekapu/lbbjjejkepnemhcbhcccjcenkhmkkbdm" 
+      target="_blank"
+      rel="noopener noreferrer"
+      variant="primary" 
+      size="lg"
+    >
       {common.cta.addToChrome}
     </Button>
   </section>
