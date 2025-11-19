@@ -4,9 +4,11 @@ interface Props {
   variant?: 'primary' | 'secondary';
   size?: 'sm' | 'md' | 'lg';
   class?: string;
+  target?: string;
+  rel?: string;
 }
 
-const { href, variant = 'primary', size = 'md', class: className = '' } = Astro.props;
+const { href, variant = 'primary', size = 'md', class: className = '', target, rel } = Astro.props;
 
 const baseStyles = 'btn';
 const variantStyles = {
@@ -23,7 +25,7 @@ const classes = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${c
 ---
 
 {href ? (
-  <a href={href} class={classes}>
+  <a href={href} class={classes} target={target} rel={rel}>
     <slot />
   </a>
 ) : (

@@ -52,13 +52,22 @@ Currently available in **English**, **Russian**, and **Ukrainian**. [More transl
 
 ## Installation
 
-### From Source (Current Method)
+### From Chrome Web Store
 
-> **Note:** Rekapu will be available on the Chrome Web Store soon. For now, you can install it from source.
+Install Rekapu directly from the Chrome Web Store:
+
+**[→ Add to Chrome](https://chromewebstore.google.com/detail/rekapu/lbbjjejkepnemhcbhcccjcenkhmkkbdm)**
+
+### Supported Browsers
+Any Chromium-based browser: Chrome, Brave, Edge, Opera, Vivaldi (version 88 or higher)
+
+### From Source (For Developers)
+
+If you want to contribute or modify the extension:
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/rekapu.git
+   git clone https://github.com/k-tkachov/rekapu.git
    cd rekapu
    ```
 
@@ -77,9 +86,6 @@ Currently available in **English**, **Russian**, and **Ukrainian**. [More transl
    - Enable "Developer mode" in the top right
    - Click "Load unpacked" and select the `dist` folder
    - The Rekapu extension is now installed!
-
-### Supported Browsers
-Any Chromium-based browser: Chrome, Brave, Edge, Opera, Vivaldi (version 88 or higher)
 
 ## Usage
 
