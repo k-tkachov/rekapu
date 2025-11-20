@@ -10,7 +10,7 @@ import {
   Tooltip,
 } from '@chakra-ui/react';
 import { ViewIcon, EditIcon } from '@chakra-ui/icons';
-import { marked } from 'marked';
+import { renderMarkdown } from '../../utils/markdownRenderer';
 import { renderClozeWithMask } from '../../utils/clozeParser';
 import { t } from '../../utils/i18n';
 import '../../styles/markdown.css';
@@ -44,24 +44,21 @@ export const LiveMarkdownEditor: React.FC<LiveMarkdownEditorProps> = ({
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const previewRef = useRef<HTMLDivElement>(null);
   
-  // Render markdown content using marked.js
   const renderedContent = useMemo(() => {
     if (!value) return '';
     
     if (cardType === 'cloze') {
-      // For cloze cards, show preview of how each deletion would look
       const clozeRegex = /\{\{c(\d+)::([^:}]+)(?:::([^}]*))?\}\}/g;
       const matches = [...value.matchAll(clozeRegex)];
       
       if (matches.length === 0) {
-        return marked.parse(value);
+        return renderMarkdown(value);
       }
       
-      // Show a preview for each cloze deletion
       const previews = matches.map((match, index) => {
         const clozeId = parseInt(match[1], 10);
         const maskedText = renderClozeWithMask(value, clozeId, '[...]');
-        const renderedMasked = marked.parse(maskedText);
+        const renderedMasked = renderMarkdown(maskedText);
         return `<div class="cloze-preview">
           <div class="cloze-preview-header">Card ${clozeId}:</div>
           ${renderedMasked}
@@ -71,7 +68,7 @@ export const LiveMarkdownEditor: React.FC<LiveMarkdownEditorProps> = ({
       return previews.join('');
     }
     
-    return marked.parse(value);
+    return renderMarkdown(value);
   }, [value, cardType]);
 
   // Sync scroll between editor and preview

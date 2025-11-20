@@ -32,6 +32,8 @@
   box-sizing: border-box;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  width: 100%;
+  text-align: center;
 }
 
 /* Reset and base styles for all markdown content */
