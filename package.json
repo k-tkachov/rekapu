@@ -1,6 +1,6 @@
 {
   "name": "rekapu-extension",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A browser extension that combines spaced repetition learning with website access control",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,7 @@
     "productivity",
     "website-blocking"
   ],
-  "author": "Rekapu Team",
+  "author": "Kyrylo Tkachov",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
     "@types/chrome": "^0.1.28",

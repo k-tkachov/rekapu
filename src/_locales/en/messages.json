@@ -3,6 +3,10 @@
     "message": "Rekapu",
     "description": "Extension name"
   },
+  "extNameFull": {
+    "message": "Rekapu: Block Distractions, Learn with Flashcards",
+    "description": "Extension name full"
+  },
   "extDescription": {
     "message": "Combine spaced repetition learning with website access control for focused productivity",
     "description": "Extension description"

@@ -54,6 +54,26 @@ let isLoadingAudio = false;
 let isFrontTTSPlaying = false;
 let isStudyMode = false; // Flag for study session mode (voluntary study vs blocking)
 
+function safeMarkdownRender(text) {
+    if (!text) return '';
+    if (window.marked && window.marked.parse) {
+        if (!window.markedConfigured) {
+            window.marked.use({
+                breaks: true,
+                gfm: true,
+                renderer: {
+                    html() {
+                        return '';
+                    }
+                }
+            });
+            window.markedConfigured = true;
+        }
+        return window.marked.parse(text);
+    }
+    return text;
+}
+
 // Helper function to redirect to original URL
 async function redirectToOriginalUrl() {
     try {
@@ -121,13 +141,7 @@ function generateShowAnswer(card) {
     inputContainer.style.display = 'none';
     answerSection.style.display = 'none';
     
-    // Render answer with markdown
-    let renderedAnswer;
-    if (window.marked && window.marked.parse) {
-        renderedAnswer = window.marked.parse(card.back);
-    } else {
-        renderedAnswer = card.back;
-    }
+    const renderedAnswer = safeMarkdownRender(card.back);
     
     answerContainer.innerHTML = `
         <div class="show-answer-label" data-i18n="answer">Back</div>
@@ -209,13 +223,7 @@ function showCorrectAnswer(correctAnswer) {
     const answerContainer = document.getElementById('answerContainer');
     const answerSection = document.getElementById('answerSection');
     
-    // Render answer with markdown
-    let renderedAnswer;
-    if (window.marked && window.marked.parse) {
-        renderedAnswer = window.marked.parse(correctAnswer);
-    } else {
-        renderedAnswer = correctAnswer;
-    }
+    const renderedAnswer = safeMarkdownRender(correctAnswer);
     
     answerContainer.innerHTML = `
         <div class="show-answer-label">Correct Answer</div>
@@ -625,13 +633,8 @@ async function loadNewCard() {
             blockingCurrentCard = response.card;
             usedCardIds.add(blockingCurrentCard.id);
             
-            // Use marked.js for markdown rendering
             const cardTextElement = document.getElementById('cardText');
-            if (window.marked && window.marked.parse) {
-                cardTextElement.innerHTML = `<div class="markdown-content">${window.marked.parse(blockingCurrentCard.front)}</div>`;
-            } else {
-                cardTextElement.innerHTML = `<div class="markdown-content">${blockingCurrentCard.front}</div>`;
-            }
+            cardTextElement.innerHTML = `<div class="markdown-content">${safeMarkdownRender(blockingCurrentCard.front)}</div>`;
             
             // Store TTS availability for later (when answer is revealed)
             const ttsInfo = await checkTTSAvailability(blockingCurrentCard);

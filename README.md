@@ -11,7 +11,8 @@
     <a href="#installation">Installation</a> •
     <a href="#usage">Usage</a> •
     <a href="#development">Development</a> •
-    <a href="CONTRIBUTING.md">Contributing</a>
+    <a href="CONTRIBUTING.md">Contributing</a> •
+    <a href="CHANGELOG.md">Changelog</a>
   </p>
 </div>
 

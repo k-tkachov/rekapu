@@ -3,6 +3,10 @@
     "message": "Rekapu",
     "description": "Extension name"
   },
+  "extNameFull": {
+    "message": "Rekapu: Блокируйте отвлечения, учитесь с флэш-карточками",
+    "description": "Extension name full"
+  },
   "extDescription": {
     "message": "Объедините повторение с интервалами и контроль доступа к веб-сайтам для продуктивной работы",
     "description": "Extension description"
