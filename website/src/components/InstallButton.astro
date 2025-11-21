@@ -70,8 +70,12 @@ const classes = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${c
     if (ua.includes('vivaldi')) return 'vivaldi';
     if (ua.includes('arc')) return 'arc';
     
-    if ((navigator as any).brave && await (navigator as any).brave.isBrave()) {
-      return 'brave';
+    try {
+      if ((navigator as any).brave && await (navigator as any).brave.isBrave()) {
+        return 'brave';
+      }
+    } catch (e) {
+      // Brave check failed, continue to other checks
     }
     
     if (ua.includes('chrome')) return 'chrome';
