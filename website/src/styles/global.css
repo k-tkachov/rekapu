@@ -8,12 +8,12 @@
   }
 
   html {
-    @apply bg-dark-bg text-dark-text font-sans antialiased;
+    @apply bg-dark-bg text-dark-text font-sans antialiased overflow-x-hidden;
     scroll-behavior: smooth;
   }
 
   body {
-    @apply leading-relaxed text-base;
+    @apply leading-relaxed text-base overflow-x-hidden;
   }
   
   /* Button base styles */
