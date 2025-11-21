@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Button from '../../components/Button.astro';
+import InstallButton from '../../components/InstallButton.astro';
 import { getTranslations } from '../../i18n/utils';
 
 export async function getStaticPaths() {
@@ -18,34 +19,31 @@ const { landing, common, meta } = await getTranslations(lang);
 
 <BaseLayout title={meta.home.title} description={meta.home.description}>
   <!-- Hero -->
-  <section class="relative">
-    <div class="max-w-7xl mx-auto px-6 pt-32 pb-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+  <section class="relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-20 sm:pt-28 md:pt-32 pb-12 sm:pb-16 md:pb-20 grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
       <div>
-        <h1 class="text-6xl md:text-7xl font-medium mb-6 leading-[1.1] tracking-tight">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium mb-4 sm:mb-6 leading-[1.1] tracking-tight">
           {landing.hero.title}
         </h1>
-        <p class="text-xl text-dark-text-secondary mb-8 leading-relaxed max-w-xl">
+        <p class="text-base sm:text-lg md:text-xl text-dark-text-secondary mb-6 sm:mb-8 leading-relaxed max-w-xl">
           {landing.hero.subtitle}
         </p>
-        <div class="flex flex-wrap gap-4 items-center">
-          <Button
-            href="https://chromewebstore.google.com/detail/rekapu/lbbjjejkepnemhcbhcccjcenkhmkkbdm"
-            target="_blank"
-            rel="noopener noreferrer"
+        <div class="flex flex-wrap gap-3 sm:gap-4 items-center">
+          <InstallButton
             variant="primary"
             size="lg"
-          >
-            {common.cta.addToChrome}
-          </Button>
+            fallbackText={common.cta.addToChrome}
+            lang={lang}
+          />
         </div>
-        <p class="text-sm text-dark-text-tertiary mt-6">
+        <p class="text-xs sm:text-sm text-dark-text-tertiary mt-4 sm:mt-6">
           {landing.hero.privacyNote}
         </p>
       </div>
 
       <!-- Hero Screenshot -->
-      <div class="relative lg:translate-y-8">
-        <div class="relative rounded-2xl overflow-hidden border border-dark-border bg-dark-bg-secondary shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-300">
+      <div class="relative mt-8 lg:mt-0">
+        <div class="relative rounded-xl sm:rounded-2xl overflow-hidden border border-dark-border bg-dark-bg-secondary shadow-2xl">
           <img
             src={`/${lang}/hero_screenshot.webp`}
             alt={landing.hero.screenshotAlt}
@@ -61,73 +59,73 @@ const { landing, common, meta } = await getTranslations(lang);
 
   <!-- Problem/Solution -->
   <section class="border-y border-dark-border bg-dark-bg-secondary/50">
-    <div class="max-w-4xl mx-auto px-6 py-20 text-center">
-      <h2 class="text-4xl md:text-5xl font-medium mb-6 leading-tight">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 text-center">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium mb-4 sm:mb-6 leading-tight">
         {landing.problem.title}<br/>
         <span class="text-brand-400">{landing.problem.titleHighlight}</span>
       </h2>
-      <p class="text-xl text-dark-text-secondary leading-relaxed">
+      <p class="text-base sm:text-lg md:text-xl text-dark-text-secondary leading-relaxed">
         {landing.problem.description}
       </p>
     </div>
   </section>
 
   <!-- Features -->
-  <section class="max-w-7xl mx-auto px-6 py-24">
-    <div class="text-center mb-20">
-      <h2 class="text-4xl md:text-5xl font-medium mb-4">{landing.features.title}</h2>
-      <p class="text-xl text-dark-text-secondary">{landing.features.subtitle}</p>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-24">
+    <div class="text-center mb-12 sm:mb-16 md:mb-20">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium mb-3 sm:mb-4">{landing.features.title}</h2>
+      <p class="text-base sm:text-lg md:text-xl text-dark-text-secondary">{landing.features.subtitle}</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
       <!-- Spaced Repetition -->
-      <div class="group relative p-8 rounded-2xl bg-gradient-to-br from-dark-bg to-dark-bg-secondary border border-dark-border hover:border-brand-500/50 transition-all duration-300">
-        <div class="text-5xl mb-6 text-center">🧠</div>
-        <h3 class="text-2xl font-medium mb-4">{landing.features.spacedRepetition.title}</h3>
-        <p class="text-dark-text-secondary leading-relaxed">
+      <div class="group relative p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-gradient-to-br from-dark-bg to-dark-bg-secondary border border-dark-border">
+        <div class="text-4xl sm:text-5xl mb-4 sm:mb-6 text-center">🧠</div>
+        <h3 class="text-xl sm:text-2xl font-medium mb-3 sm:mb-4">{landing.features.spacedRepetition.title}</h3>
+        <p class="text-sm sm:text-base text-dark-text-secondary leading-relaxed">
           {landing.features.spacedRepetition.description}
         </p>
       </div>
 
       <!-- Text-to-Speech -->
-      <div class="group relative p-8 rounded-2xl bg-gradient-to-br from-dark-bg to-dark-bg-secondary border border-dark-border hover:border-brand-500/50 transition-all duration-300">
-        <div class="text-5xl mb-6 text-center">🔊</div>
-        <h3 class="text-2xl font-medium mb-4">{landing.features.tts.title}</h3>
-        <p class="text-dark-text-secondary leading-relaxed" set:html={landing.features.tts.description} />
+      <div class="group relative p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-gradient-to-br from-dark-bg to-dark-bg-secondary border border-dark-border">
+        <div class="text-4xl sm:text-5xl mb-4 sm:mb-6 text-center">🔊</div>
+        <h3 class="text-xl sm:text-2xl font-medium mb-3 sm:mb-4">{landing.features.tts.title}</h3>
+        <p class="text-sm sm:text-base text-dark-text-secondary leading-relaxed" set:html={landing.features.tts.description} />
       </div>
 
       <!-- Statistics -->
-      <div class="group relative p-8 rounded-2xl bg-gradient-to-br from-dark-bg to-dark-bg-secondary border border-dark-border hover:border-brand-500/50 transition-all duration-300">
-        <div class="text-5xl mb-6 text-center">📊</div>
-        <h3 class="text-2xl font-medium mb-4">{landing.features.statistics.title}</h3>
-        <p class="text-dark-text-secondary leading-relaxed">
+      <div class="group relative p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-gradient-to-br from-dark-bg to-dark-bg-secondary border border-dark-border">
+        <div class="text-4xl sm:text-5xl mb-4 sm:mb-6 text-center">📊</div>
+        <h3 class="text-xl sm:text-2xl font-medium mb-3 sm:mb-4">{landing.features.statistics.title}</h3>
+        <p class="text-sm sm:text-base text-dark-text-secondary leading-relaxed">
           {landing.features.statistics.description}
         </p>
       </div>
 
       <!-- Anki Import -->
-      <div class="group relative p-8 rounded-2xl bg-gradient-to-br from-dark-bg to-dark-bg-secondary border border-dark-border hover:border-brand-500/50 transition-all duration-300">
-        <div class="text-5xl mb-6 text-center">📦</div>
-        <h3 class="text-2xl font-medium mb-4">{landing.features.anki.title}</h3>
-        <p class="text-dark-text-secondary leading-relaxed">
+      <div class="group relative p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-gradient-to-br from-dark-bg to-dark-bg-secondary border border-dark-border">
+        <div class="text-4xl sm:text-5xl mb-4 sm:mb-6 text-center">📦</div>
+        <h3 class="text-xl sm:text-2xl font-medium mb-3 sm:mb-4">{landing.features.anki.title}</h3>
+        <p class="text-sm sm:text-base text-dark-text-secondary leading-relaxed">
           {landing.features.anki.description}
         </p>
       </div>
 
       <!-- Markdown Support -->
-      <div class="group relative p-8 rounded-2xl bg-gradient-to-br from-dark-bg to-dark-bg-secondary border border-dark-border hover:border-brand-500/50 transition-all duration-300">
-        <div class="text-5xl mb-6 text-center">✍️</div>
-        <h3 class="text-2xl font-medium mb-4">{landing.features.markdown.title}</h3>
-        <p class="text-dark-text-secondary leading-relaxed">
+      <div class="group relative p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-gradient-to-br from-dark-bg to-dark-bg-secondary border border-dark-border">
+        <div class="text-4xl sm:text-5xl mb-4 sm:mb-6 text-center">✍️</div>
+        <h3 class="text-xl sm:text-2xl font-medium mb-3 sm:mb-4">{landing.features.markdown.title}</h3>
+        <p class="text-sm sm:text-base text-dark-text-secondary leading-relaxed">
           {landing.features.markdown.description}
         </p>
       </div>
 
       <!-- Privacy -->
-      <div class="group relative p-8 rounded-2xl bg-gradient-to-br from-dark-bg to-dark-bg-secondary border border-dark-border hover:border-brand-500/50 transition-all duration-300">
-        <div class="text-5xl mb-6 text-center">🔒</div>
-        <h3 class="text-2xl font-medium mb-4">{landing.features.privacy.title}</h3>
-        <p class="text-dark-text-secondary leading-relaxed">
+      <div class="group relative p-6 sm:p-8 rounded-xl sm:rounded-2xl bg-gradient-to-br from-dark-bg to-dark-bg-secondary border border-dark-border">
+        <div class="text-4xl sm:text-5xl mb-4 sm:mb-6 text-center">🔒</div>
+        <h3 class="text-xl sm:text-2xl font-medium mb-3 sm:mb-4">{landing.features.privacy.title}</h3>
+        <p class="text-sm sm:text-base text-dark-text-secondary leading-relaxed">
           {landing.features.privacy.description}
         </p>
       </div>
@@ -135,26 +133,26 @@ const { landing, common, meta } = await getTranslations(lang);
   </section>
 
   <!-- How It Works -->
-  <section class="max-w-7xl mx-auto px-6 py-24">
-    <div class="text-center mb-20">
-      <h2 class="text-4xl font-medium mb-4">{landing.howItWorks.title}</h2>
-      <p class="text-xl text-dark-text-secondary">{landing.howItWorks.subtitle}</p>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-24">
+    <div class="text-center mb-12 sm:mb-16 md:mb-20">
+      <h2 class="text-3xl sm:text-4xl font-medium mb-3 sm:mb-4">{landing.howItWorks.title}</h2>
+      <p class="text-base sm:text-lg md:text-xl text-dark-text-secondary">{landing.howItWorks.subtitle}</p>
     </div>
 
-    <div class="space-y-24">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div class="space-y-16 sm:space-y-20 md:space-y-24">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
         <div>
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-10 h-10 rounded-full bg-brand-600 text-white flex items-center justify-center font-medium text-lg">
+          <div class="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-brand-600 text-white flex items-center justify-center font-medium text-base sm:text-lg flex-shrink-0">
               1
             </div>
-            <h3 class="text-2xl font-medium">{landing.howItWorks.step1.title}</h3>
+            <h3 class="text-lg sm:text-xl md:text-2xl font-medium">{landing.howItWorks.step1.title}</h3>
           </div>
-          <p class="text-lg text-dark-text-secondary leading-relaxed pl-14">
+          <p class="text-sm sm:text-base md:text-lg text-dark-text-secondary leading-relaxed pl-11 sm:pl-14">
             {landing.howItWorks.step1.description}
           </p>
         </div>
-        <div class="rounded-2xl overflow-hidden border border-dark-border bg-dark-bg-secondary">
+        <div class="rounded-xl sm:rounded-2xl overflow-hidden border border-dark-border bg-dark-bg-secondary">
           <img
             src={`/${lang}/step1.webp`}
             alt={landing.howItWorks.step1.screenshotAlt}
@@ -165,8 +163,8 @@ const { landing, common, meta } = await getTranslations(lang);
         </div>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div class="order-2 lg:order-1 rounded-2xl overflow-hidden border border-dark-border bg-dark-bg-secondary">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
+        <div class="order-2 lg:order-1 rounded-xl sm:rounded-2xl overflow-hidden border border-dark-border bg-dark-bg-secondary">
           <img
             src={`/${lang}/step2.webp`}
             alt={landing.howItWorks.step2.screenshotAlt}
@@ -176,31 +174,31 @@ const { landing, common, meta } = await getTranslations(lang);
           />
         </div>
         <div class="order-1 lg:order-2">
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-10 h-10 rounded-full bg-brand-600 text-white flex items-center justify-center font-medium text-lg">
+          <div class="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-brand-600 text-white flex items-center justify-center font-medium text-base sm:text-lg flex-shrink-0">
               2
             </div>
-            <h3 class="text-2xl font-medium">{landing.howItWorks.step2.title}</h3>
+            <h3 class="text-lg sm:text-xl md:text-2xl font-medium">{landing.howItWorks.step2.title}</h3>
           </div>
-          <p class="text-lg text-dark-text-secondary leading-relaxed pl-14">
+          <p class="text-sm sm:text-base md:text-lg text-dark-text-secondary leading-relaxed pl-11 sm:pl-14">
             {landing.howItWorks.step2.description}
           </p>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
         <div>
-          <div class="flex items-center gap-4 mb-6">
-            <div class="w-10 h-10 rounded-full bg-brand-600 text-white flex items-center justify-center font-medium text-lg">
+          <div class="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-brand-600 text-white flex items-center justify-center font-medium text-base sm:text-lg flex-shrink-0">
               3
             </div>
-            <h3 class="text-2xl font-medium">{landing.howItWorks.step3.title}</h3>
+            <h3 class="text-lg sm:text-xl md:text-2xl font-medium">{landing.howItWorks.step3.title}</h3>
           </div>
-          <p class="text-lg text-dark-text-secondary leading-relaxed pl-14">
+          <p class="text-sm sm:text-base md:text-lg text-dark-text-secondary leading-relaxed pl-11 sm:pl-14">
             {landing.howItWorks.step3.description}
           </p>
         </div>
-        <div class="rounded-2xl overflow-hidden border border-dark-border bg-dark-bg-secondary">
+        <div class="rounded-xl sm:rounded-2xl overflow-hidden border border-dark-border bg-dark-bg-secondary">
           <img
             src="/step3.webp"
             alt={landing.howItWorks.step3.screenshotAlt}
@@ -213,15 +211,15 @@ const { landing, common, meta } = await getTranslations(lang);
   </section>
 
   <!-- FAQ -->
-  <section class="max-w-4xl mx-auto px-6 py-24">
-    <h2 class="text-4xl font-medium mb-12 text-center">{landing.faq.title}</h2>
-    <div class="space-y-4">
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-24">
+    <h2 class="text-3xl sm:text-4xl font-medium mb-8 sm:mb-12 text-center">{landing.faq.title}</h2>
+    <div class="space-y-3 sm:space-y-4">
       {landing.faq.items.map((item: any, index: number) => (
-        <details class="group rounded-xl border border-dark-border bg-dark-bg-secondary overflow-hidden">
-          <summary class="flex items-center justify-between p-6 cursor-pointer list-none hover:bg-dark-bg-secondary/80 transition-colors">
-            <h3 class="text-xl font-medium pr-4">{item.question}</h3>
+        <details class="group rounded-lg sm:rounded-xl border border-dark-border bg-dark-bg-secondary overflow-hidden">
+          <summary class="flex items-center justify-between p-4 sm:p-6 cursor-pointer list-none hover:bg-dark-bg-secondary/80 transition-colors">
+            <h3 class="text-base sm:text-lg md:text-xl font-medium pr-3 sm:pr-4">{item.question}</h3>
             <svg
-              class="w-5 h-5 text-dark-text-secondary transition-transform group-open:rotate-180 flex-shrink-0"
+              class="w-4 h-4 sm:w-5 sm:h-5 text-dark-text-secondary transition-transform group-open:rotate-180 flex-shrink-0"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -229,8 +227,8 @@ const { landing, common, meta } = await getTranslations(lang);
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
           </summary>
-          <div class="px-6 pb-6 pt-0">
-            <p class="text-dark-text-secondary leading-relaxed">{item.answer}</p>
+          <div class="px-4 sm:px-6 pb-4 sm:pb-6 pt-0">
+            <p class="text-sm sm:text-base text-dark-text-secondary leading-relaxed">{item.answer}</p>
           </div>
         </details>
       ))}
@@ -238,22 +236,19 @@ const { landing, common, meta } = await getTranslations(lang);
   </section>
 
   <!-- CTA -->
-  <section class="max-w-4xl mx-auto px-6 py-32 text-center">
-    <h2 class="text-5xl md:text-6xl font-medium mb-6 leading-tight">
+  <section class="max-w-4xl mx-auto px-4 sm:px-6 py-20 sm:py-28 md:py-32 text-center">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-4 sm:mb-6 leading-tight">
       {landing.cta.title}
     </h2>
-    <p class="text-xl text-dark-text-secondary mb-10 max-w-2xl mx-auto">
+    <p class="text-base sm:text-lg md:text-xl text-dark-text-secondary mb-8 sm:mb-10 max-w-2xl mx-auto">
       {landing.cta.subtitle}
     </p>
-    <Button 
-      href="https://chromewebstore.google.com/detail/rekapu/lbbjjejkepnemhcbhcccjcenkhmkkbdm" 
-      target="_blank"
-      rel="noopener noreferrer"
+    <InstallButton 
       variant="primary" 
       size="lg"
-    >
-      {common.cta.addToChrome}
-    </Button>
+      fallbackText={common.cta.addToChrome}
+      lang={lang}
+    />
   </section>
 </BaseLayout>
 

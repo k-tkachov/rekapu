@@ -1,0 +1,144 @@
+---
+interface Props {
+  variant?: 'primary' | 'secondary';
+  size?: 'sm' | 'md' | 'lg';
+  class?: string;
+  fallbackText?: string;
+  lang?: string;
+}
+
+const { variant = 'primary', size = 'md', class: className = '', fallbackText = 'Install Extension', lang = 'en' } = Astro.props;
+
+const baseStyles = 'btn';
+const variantStyles = {
+  primary: 'bg-brand-600 text-white hover:bg-brand-700 hover:text-white',
+  secondary: 'bg-dark-bg-tertiary text-dark-text hover:bg-dark-border-hover hover:text-dark-text'
+};
+const sizeStyles = {
+  sm: 'px-4 py-2 text-sm rounded-rekapu-sm',
+  md: 'px-6 py-3 text-base rounded-rekapu-sm',
+  lg: 'px-8 py-4 text-lg rounded-rekapu-md'
+};
+
+const classes = `${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`;
+---
+
+<a 
+  href="https://chromewebstore.google.com/detail/rekapu/lbbjjejkepnemhcbhcccjcenkhmkkbdm"
+  target="_blank"
+  rel="noopener noreferrer"
+  class={`${classes} install-button`}
+  data-lang={lang}
+  data-size={size}
+>
+  <span class="button-text">
+    <span class="button-label">{fallbackText}</span>
+    <img src="/browser_icons/chrome.png" alt="" class="browser-icon">
+  </span>
+</a>
+
+<script>
+  const browserIcons = {
+    chrome: '/browser_icons/chrome.png',
+    edge: '/browser_icons/chrome.png',
+    brave: '/browser_icons/brave.png',
+    opera: '/browser_icons/opera.png',
+    vivaldi: '/browser_icons/vivaldi.png',
+    arc: '/browser_icons/arc.png'
+  };
+
+  const browserNames = {
+    chrome: 'Chrome',
+    edge: 'Edge',
+    brave: 'Brave',
+    opera: 'Opera',
+    vivaldi: 'Vivaldi',
+    arc: 'Arc'
+  };
+
+  const i18nTexts: Record<string, Record<string, string>> = {
+    en: { addTo: 'Add to' },
+    ru: { addTo: 'Добавить в' },
+    uk: { addTo: 'Додати до' }
+  };
+
+  async function detectBrowser() {
+    const ua = navigator.userAgent.toLowerCase();
+    
+    if (ua.includes('edg/')) return 'edge';
+    if (ua.includes('opr/') || ua.includes('opera')) return 'opera';
+    if (ua.includes('vivaldi')) return 'vivaldi';
+    if (ua.includes('arc')) return 'arc';
+    
+    if ((navigator as any).brave && await (navigator as any).brave.isBrave()) {
+      return 'brave';
+    }
+    
+    if (ua.includes('chrome')) return 'chrome';
+    
+    return 'chrome';
+  }
+
+  async function updateButtons() {
+    const buttons = document.querySelectorAll('.install-button');
+    const browser = await detectBrowser();
+    const iconSrc = browserIcons[browser as keyof typeof browserIcons];
+    const name = browserNames[browser as keyof typeof browserNames];
+
+    buttons.forEach((buttonElement) => {
+      const buttonText = buttonElement.querySelector('.button-text');
+      if (!buttonText) return;
+
+      const lang = buttonElement.getAttribute('data-lang') || 'en';
+      const texts = i18nTexts[lang] || i18nTexts.en;
+
+      const iconImg = buttonText.querySelector('.browser-icon') as HTMLImageElement;
+      if (iconImg) {
+        iconImg.src = iconSrc;
+      }
+      
+      const textSpan = buttonText.querySelector('.button-label');
+      if (textSpan) {
+        textSpan.textContent = `${texts.addTo} ${name}`;
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateButtons);
+  } else {
+    updateButtons();
+  }
+</script>
+
+<style>
+  .install-button {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .button-text {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
+  
+  .install-button[data-size="sm"] .browser-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  
+  .install-button[data-size="md"] .browser-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  
+  .install-button[data-size="lg"] .browser-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+  
+  .browser-icon {
+    display: inline-block;
+  }
+</style>
+

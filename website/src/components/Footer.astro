@@ -5,9 +5,9 @@ const t = await getPageTranslations(locale, 'common');
 ---
 
 <footer class="border-t border-dark-border bg-dark-bg-secondary/50">
-  <div class="max-w-7xl mx-auto px-6 py-8">
-    <div class="text-center space-y-3">
-      <p class="text-sm text-dark-text-secondary">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+    <div class="text-center space-y-2 sm:space-y-3">
+      <p class="text-xs sm:text-sm text-dark-text-secondary">
         © 2025 Rekapu • <a href={`/${locale}/privacy`} class="hover:text-brand-400 transition-colors">{t.footer.privacy}</a>
       </p>
       <div class="flex items-center justify-center gap-2 text-xs text-dark-text-secondary">
@@ -23,6 +23,17 @@ const t = await getPageTranslations(locale, 'common');
           </a>
         </span>
       </div>
+      <p class="text-xs text-dark-text-tertiary opacity-60">
+        Browser icons by{' '}
+        <a 
+          href="https://icons8.com/" 
+          target="_blank" 
+          rel="nofollow noopener noreferrer"
+          class="hover:text-dark-text-secondary transition-colors"
+        >
+          Icons8
+        </a>
+      </p>
     </div>
   </div>
 </footer>
