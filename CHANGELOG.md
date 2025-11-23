@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.0.1] - 2025-10-20
+## [1.0.1] - 2025-11-20
 
 ### Fixed
 - Improved markdown rendering consistency across blocking interface and card editor
@@ -18,7 +18,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated Chrome Web Store extension name to full descriptive title
 - Updated package.json author information
 
-## [1.0.0] - 2025-10-19
+## [1.0.0] - 2025-11-19
 
 ### Added
 - Initial release of Rekapu browser extension
