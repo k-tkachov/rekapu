@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-08-14
+
+### Added
+- Syntax highlighting for fenced code blocks, both on cards shown while blocking and in the card editor preview
+- 21 bundled languages, including JavaScript, TypeScript, Python, Java, C/C++, C#, Go, Rust, PHP, Ruby, SQL, Kotlin, and Swift
+
+### Fixed
+- Code blocks no longer inherit centered alignment from the card container
+
 ## [1.1.0] - 2025-12-13
 
 ### Added
@@ -53,7 +62,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Dark theme with Material Design 3-inspired UI
 - Chrome Web Store publication
 
-[Unreleased]: https://github.com/powermodeon/rekapu/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/powermodeon/rekapu/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/powermodeon/rekapu/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/powermodeon/rekapu/compare/v1.0.1...v1.1.0
 [1.0.1]: https://github.com/powermodeon/rekapu/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/powermodeon/rekapu/releases/tag/v1.0.0
