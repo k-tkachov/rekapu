@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react';
 import { ViewIcon, EditIcon } from '@chakra-ui/icons';
 import { renderMarkdown } from '../../utils/markdownRenderer';
+import { highlightCodeBlocks } from '../../utils/syntaxHighlight';
 import { renderClozeWithMask } from '../../utils/clozeParser';
 import { t } from '../../utils/i18n';
 import '../../styles/markdown.css';
@@ -130,6 +131,14 @@ export const LiveMarkdownEditor: React.FC<LiveMarkdownEditorProps> = ({
       blobUrlsRef.current = [];
     };
   }, [renderedContent]);
+
+  // Syntax-highlight fenced code blocks in the preview.
+  // Depends on viewMode too: the preview pane unmounts in edit mode, so
+  // switching back to it remounts unhighlighted markup even when the text
+  // hasn't changed.
+  useEffect(() => {
+    highlightCodeBlocks(previewRef.current);
+  }, [renderedContent, viewMode]);
 
   // Sync scroll between editor and preview
   const handleEditorScroll = () => {
