@@ -114,6 +114,15 @@ function stripMediaSrc(html) {
 }
 
 /**
+ * Syntax-highlight fenced code blocks inside a rendered card.
+ * Provided by syntaxHighlight.js; a no-op if that bundle failed to load.
+ */
+function highlightCodeBlocks(containerElement) {
+    if (typeof window.rekapuHighlightCodeBlocks !== 'function') return;
+    window.rekapuHighlightCodeBlocks(containerElement);
+}
+
+/**
  * Resolve media URLs for elements with data-media-id attributes
  * Fetches media data from IndexedDB and creates blob URLs
  */
@@ -232,7 +241,9 @@ async function generateShowAnswer(card) {
         <div class="show-answer-text markdown-content">${renderedAnswer}</div>
         <input type="hidden" id="show-answer-value" value="not-shown" />
     `;
-    
+
+    highlightCodeBlocks(answerContainer);
+
     // Resolve media URLs for images/audio in the answer
     await resolveMediaUrls(answerContainer);
     
@@ -316,7 +327,9 @@ async function showCorrectAnswer(correctAnswer) {
         <div class="show-answer-label">Correct Answer</div>
         <div class="show-answer-text markdown-content">${renderedAnswer}</div>
     `;
-    
+
+    highlightCodeBlocks(answerContainer);
+
     // Resolve media URLs for images/audio in the answer
     await resolveMediaUrls(answerContainer);
     
@@ -725,7 +738,9 @@ async function loadNewCard() {
             
             const cardTextElement = document.getElementById('cardText');
             cardTextElement.innerHTML = `<div class="markdown-content">${safeMarkdownRender(blockingCurrentCard.front)}</div>`;
-            
+
+            highlightCodeBlocks(cardTextElement);
+
             // Resolve media URLs for images/audio in the card front
             await resolveMediaUrls(cardTextElement);
             

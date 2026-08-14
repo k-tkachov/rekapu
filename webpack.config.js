@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -10,6 +11,7 @@ module.exports = {
     background: './src/background/background.ts',
     contentScript: './src/content/contentScript.ts',
     dashboard: './src/dashboard/index.tsx',
+    syntaxHighlight: './src/syntaxHighlightGlobal.ts',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -53,6 +55,17 @@ module.exports = {
     }
   },
   plugins: [
+    // BSD-3-Clause requires the notice to ship with the binary. Terser extracts
+    // it into a .LICENSE.txt for the lazily-loaded editor chunks but drops it
+    // from the standalone syntaxHighlight entry, so state it explicitly there.
+    new webpack.BannerPlugin({
+      banner: [
+        'Bundles highlight.js - BSD-3-Clause',
+        'Copyright (c) 2006, Ivan Sagalaev. All rights reserved.',
+        'https://github.com/highlightjs/highlight.js/blob/main/LICENSE',
+      ].join('\n'),
+      include: /^syntaxHighlight\.js$/,
+    }),
     new CopyWebpackPlugin({
       patterns: [
         { from: 'src/manifest.json', to: 'manifest.json' },
